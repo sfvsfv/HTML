@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1, initial-scale=1.0" />
+
+		<title>川川动态图片生成</title>
+		<meta name="description" content="让你的照片动起来" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="让你的照片动起来" />
+		<meta property="og:description" content="来试试吧" />
+
+		<link rel="stylesheet" media="all" href="static/css/main.css"/>
+
+		<script type="text/javascript" src="static/js/jquery.min.js"></script>
+		<script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="static/js/exif.min.js"></script>
+		
+				<script type="text/javascript" src="static/js/make.js"></script>
+		<script type="text/javascript" src="static/js/nod.js"></script>
+
+		<script async src="static/js/f241c62b799d461fb473e84db951ea21.js"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-112287779-1');
+		</script>
+		
+	</head>
+
+	<body>
+
+		<div id="main-wrap">
+
+			<div id="page-01-instructions">
+
+				
+
+				<div class="label--make_instruction"></div>
+
+				<a class="button select-image" href="#"><img src="static/picture/icon-camera.svg" alt="Camera icon">&nbsp; <span class="label--take_photo"></span></a>
+
+			</div>
+
+			<form class="hidden">
+				<input id="import-image" type="file" accept="image/*" />
+			</form>
+
+			<img id="face-image" src="" style="display: none;" />
+
+			<div id="page-02-03-make">
+
+				<canvas id="make-canvas" width="768" height="1024">
+				</canvas>
+
+				<div id="page-02-transform-image">
+					<div class="guides">
+						<div class="instruction" id="instruction-2">
+							<span class="label--head_width"></span>
+						</div>
+						<div class="instruction" id="instruction-3">
+							<span class="label--jawline"></span>
+						</div>
+					</div>
+
+					<div id="scale-and-rotate-desktop">
+						<span class="label--scale_and_rotate"></span>
+					</div>
+
+					<form>
+						<input type="submit" class="label--switch_image select-image"><input type="submit" class="label--next next">
+					</form>
+				</div>
+
+				<div id="page-03-mark-image">
+					<div class="zoomed">
+						<canvas id="zoomed-canvas" width="768" height="1024">
+						</canvas>
+						<div class="marker">
+						</div>
+					</div>
+
+					<div class="markers">
+						<div class="eye left">
+						</div>
+						<div class="eye right">
+						</div>
+						<div class="mouth left">
+						</div>
+						<div class="mouth center">
+						</div>
+						<div class="mouth right">
+						</div>
+					</div>
+
+					<form>
+						<input type="submit" class="label--transform_image back"><input type="submit" class="label--go next">
+					</form>
+				</div>
+
+				<div class="instruction" id="instruction-1">
+				</div>
+
+				<span id="output"></span>
+			</div>
+
+			<div id="page-04-nod">
+
+				<div class="dialog name-dialog">
+					<a href="#" class="close"><img src="static/picture/icon-close.svg" alt="Close icon"></a>
+					<h2 class="label--name_of_person"></h2>
+					<input id="name-input" name="name-input" value>
+					<input type="submit" class="label--save_and_share next-2">
+				</div>
+
+				<canvas id="nod-canvas" width="768" height="1024">
+				</canvas>
+
+			    <audio id="the-song" loop>
+			    	<source id="the-song-source" src="nod-to-the-rhythm.mp3">
+				</audio>
+
+				<form>
+					<input type="submit" class="label--edit back"><input type="submit" class="label--save_and_share next" disabled="disabled">
+				</form>
+			</div>
+
+		</div>
+	
+	</body>
+</html>
