@@ -1,0 +1,233 @@
+body{
+	background:#2286c6;
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+	font-family:Arial;
+}
+#container{
+	margin:0px auto;
+	width:780px;
+	height:600px;
+	text-align:left;
+	background:#123456;
+}
+#banner{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	height:150px;
+	background:#778899;
+}
+#globallink{
+	margin:0px;
+	padding:0px;
+}
+#globallink ul{
+	list-style-type:none;
+	padding:0px;
+	margin:0px;
+}
+#globallink ul li{
+	float:left;
+	text-align:center;
+	width:78px;
+}
+#globallink ul li a{
+	display:block;
+	padding:7px 6px 7px 6px;
+	margin:0px;
+	background:url("images/button1.jpg") no-repeat;
+}
+#globallink a:link {
+	color:#004a87;
+	text-decoration:none;
+}    /* 未被访问的链接 */
+#globallink a:visited {
+	color:#004a87;
+	text-decoration:none;
+} /* 已被访问的链接 */
+#globallink a:hover {
+	text-decoration:underline;
+	background:url("images/button1_bg.jpg") no-repeat;
+}   /* 鼠标指针移动到链接上 */
+#globallink a:active {text-decoration:underline;}  /* 正在被点击的链接 */
+
+#left{
+	margin:0px;
+	padding:0px 0px 5px 0px;
+	width:200px;
+	background:white;
+	color:#d8ecff;
+	float:left;
+}
+#weather{
+	background:url("images/weather.jpg") no-repeat -5px -5px;
+	margin:0px 5px;
+	background-color:#5ea6eb;
+}
+#weather h3{
+	font-size:12px;
+	padding:16px 0px 0px 74px;
+	margin:5px; 
+}
+#weather ul{
+	margin:8px 5px 0px 5px;
+	padding:10px 0px 8px 5px;
+	list-style-type:none;	
+}
+#weather ul li{
+	background:url("images/icon1.gif") no-repeat 0px 6px;
+	padding:0px 0px 0px 10px;
+}
+#today{
+	background:#5ea6eb;
+	margin:0px 5px 0px 5px;
+	padding:0px 0px 10px 0px;
+}
+#today h3{
+	color:#003973;
+	font-size:12px;
+	background:#bbddff url("images/icon2.gif") no-repeat 5px 9px;
+	padding:4px 0px 0px 15px;
+	margin:0px 0px 5px 0px;
+}
+#today ul{
+	margin:-1px 0px 0px 0px;
+	padding:0px;
+	list-style-type:none;	
+}
+#today ul li{
+	text-align:center;
+}
+#today ul li img{
+	border:1px solid #ffffff;
+	margin:8px 0px 0px 0px; 
+}
+#today ul li a:link,#today ul li a:visited {
+	color:#d8ecff;
+	text-decoration:none;
+} /* 未被访问的链接+已被访问的链接 */
+#today ul li a:hover {
+	text-decoration:underline;
+	color:#ffff00;
+}   /* 鼠标指针移动到链接上 */
+#middle{
+	margin:0px 2px;
+	padding:5px 0px 5px 0px;
+	width:400px;
+	background:white;
+	float:left;
+}
+#middle div{
+	margin:0px 5px;
+}
+#middle h3{
+	margin:0px;
+	padding:0px;
+	height:41px;	
+}
+#middle h3 span{
+	display:none;/*去掉span内文字，换成背景图片*/
+}
+#beauty{
+	margin:15px 0px 0px 0px;
+	padding:0px;
+}
+#beauty h3{
+	background:url("images/picture_h1.gif") no-repeat;
+}
+#beauty ul,#route ul{	/*此处设置margin上高度可以使left和middle下底边对齐*/
+	list-style-type:none;
+	margin:15.5px 1px 0px 1px;
+	padding:0px;
+}
+#beauty ul li{
+	float:left;
+	width:97px;
+	text-align:center;
+}
+#beauty ul li img{
+	border:1px solid #4ab0ff;/*实线solid*/
+}#route{
+	clear:left;
+	margin:0px;
+	padding:5px 0px 15px 0px;
+}
+#route h3{	
+	background:url("images/route_h1.gif") no-repeat;
+}
+#route ul li{
+	background:url("images/icon1.gif") no-repeat 20px 9px;
+	padding:3px 0px 0px 30px;
+}
+#route ul li a:link,#today ul li a:visited {
+	color:#d8ecff;
+	text-decoration:none;
+} /* 未被访问的链接+已被访问的链接 */
+#route ul li a:hover {
+	text-decoration:underline;
+	color:black;
+}   /* 鼠标指针移动到链接上 */
+#right{
+	margin:0px;
+	padding:0px 0px 5px 0px;
+	width:176px;
+	background:#ffffff;
+	float:left;
+}
+#right div{
+	margin:0px 5px;
+	background:#5ea6eb;
+}
+#right h3{
+	color:#003973;
+	font-size:12px;
+	background:#bbddff url("images/icon2.gif") no-repeat 5px 9px;
+	padding:4px 0px 2px 15px;
+	margin:4.5px 0px 5px 0px;   /*此处设置margin上高度可以使left和middle下底边对齐*/
+}
+#map p{
+	text-align:center;
+	margin:0px;
+	padding:2px 0px 5px 0px;
+}
+#map p img{
+	border:1px solid #ffffff;
+	margin:4px 0px 0px 0px; 
+}
+#food ul,#life ul{
+	list-style-type:none;
+	padding:0px 0px 10px 0px;
+	margin:10px 10px 0px 10px;
+}
+#food ul li,#life ul li{
+	background:url("images/icon1.gif") no-repeat 3px 9px;
+	padding: 3px 0px 3px 12px;
+	border-bottom:1px dashed #eeeeee;
+}
+#food ul li a:link,#food ul li a:visited,#life ul li a:link,#life ul li a:visited{
+	color:#d8ecff;
+	text-decoration:none;
+}
+#food ul li a:hover,#life ul li a:hover {
+	text-decoration:underline;
+	color:black;
+}
+	
+#footer{
+	margin:0px;
+	padding:1px 0px;
+	background:white;
+	clear:left;
+}
+#footer p{
+	text-align:center;
+	padding:0px;
+	margin:4px 5px;
+	background:#5ea6eb;
+}
+#footer p a{
+	color:white;
+	text-decoration:none;
+}
