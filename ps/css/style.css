@@ -1,0 +1,349 @@
+html,
+body {
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	background: #FFF;
+	color: #333;
+	font: 13px/1.5 -apple-system,BlinkMacSystemFont,Segoe UI,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+h1 {
+	font-size:18px;
+}
+
+img{
+	border: 0;
+}
+ul{
+	list-style: none;
+}
+
+.page-header{
+	background: #111;
+}
+
+/* .header-navigation{
+    width: auto;
+    float: left;
+} */
+
+.header{
+	min-width: 1300px;
+	background: #111;
+	color: #DDD;
+    height: 55px;
+	padding-top: 17px;
+	position: relative;
+	z-index: 8;
+}
+.header > div{
+	float: left;
+	margin: 0 3px;
+	position: relative;
+}
+
+.header a{
+	display: inline-block;
+	background: #474747;
+    height: 36px;
+    border-radius: 4px;
+	color: #f4f4f4;
+	line-height: 36px;
+	padding: 0 8px;
+	vertical-align: top;
+    text-decoration: none;
+	position: relative;
+}
+.header .highlight a{
+	background: #2254f4;
+	color: #FFF;
+	padding: 0 12px;
+}
+.header .highlight a:hover{
+	background-color: #2a5cfc;
+}
+
+/* for css hover */
+.header > div:after{
+	content: "";
+	height: 4px;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	left: 0;
+}
+
+.header div:hover a,
+.header a.current{
+    background: #333;
+}
+
+.header .title{
+	margin-top: -17px;
+	padding: 0 20px 0 10px;
+}
+.header .title a,
+.header .title:hover a{
+	margin: 0;
+	background: none;
+}
+.header .title a{
+	padding: 22px 0 10px;
+}
+.header .title img{
+	height: 24px;
+	vertical-align: top;
+}
+
+.header .other a,
+.header > .other:hover a{
+	background: none;
+	margin: 0 1em;
+}
+
+.header_banner_right{
+	position: absolute;
+	top: 10px;
+	right: 8px;
+	z-index: 10;
+}
+
+.header_banner_links{
+	padding-top: 26px;
+}
+.header_banner_links a{
+	color: #DDD;
+	text-decoration: none;
+}
+.header_banner_links a:hover{
+	color: #FFF;
+}
+.header_banner_links a font{
+    color: inherit;
+    font-size: 12px;
+}
+
+.header .parent-tab{
+	padding-right: 22px;
+	min-width: 70px;
+}
+
+.header .sub-tabs{
+	min-width: 70px;
+	/* height: 0; */
+	background: #474747;
+	border-radius: 4px;
+	line-height: 36px;
+	/* padding: 8px 0; */
+	overflow: hidden;
+	position: absolute;
+	top: 40px;
+	right: 0;
+	left: 0;
+    z-index: 1;
+	transition: all .2s linear;
+	visibility: hidden;
+	opacity: 0;
+	margin-top: -6px;
+}
+.header div:hover .sub-tabs{
+	padding: 8px 0;
+	margin-top: 0;
+	visibility: visible;
+	opacity: 1;
+}
+/* .header div:hover .sub-tabs.two-rows{
+    height: 88px;
+}
+.header div:hover .sub-tabs.three-rows{
+    height: 124px;
+} */
+.header .sub-tabs a{
+	box-sizing: border-box;
+	display: block;
+	background: #474747;
+	border-radius: 0;
+	color: #DDD;
+	margin: 0;
+	width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.header div:hover .sub-tabs a{
+	background: #474747;
+}
+.header div:hover .sub-tabs a:hover{
+	background: #333;
+	color: #FFF;
+}
+.header .sub-tabs ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header-links{
+	position: absolute;
+	right: 15px;
+	top: 0;
+	z-index: 9;
+}
+
+/* .taobao .sub-tabs a{
+    width: 98.5px;
+}
+.wechat .sub-tabs a{
+    width: 112.5px;
+}
+.gif .sub-tabs a{
+    width: 79.5px;
+}
+.simple .sub-tabs a{
+    width: 56.5px;
+} */
+
+.arrow{
+	border-color: #DDD transparent;
+	border-width: 4px 4px 0 4px;
+	border-style: solid dashed;
+    height: 0;
+	width: 0;
+	position: absolute;
+	right: 8px;
+	top: 16px;
+}
+
+
+.footer {
+	background-color:#CCCCCC;
+	padding:5px;
+	text-align:center;
+	height:35px;
+	font-size:12px;
+	line-height: 20px;
+}
+.otherContent
+{
+	padding:40px;
+	font-size:13px;
+}
+.contentTitle
+{
+	background-color:#e1e1e1;
+	font-size:18px;
+	padding:10px;
+	/* font-family: "é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·"; */
+	font-weight: bold;
+}
+.contentText
+{
+	font-size:14px;
+	background-color:#e1e1e1;
+
+}
+	#nav {
+	position:absolute;
+	right:10px;
+	top:38px;
+	width:460px;
+	line-height:30px;
+	text-align:center;
+	border:1px solid #fff;
+}
+    #noflash { padding-top:30px; margin:0 auto; width:600px; }
+.pt14
+{
+	font-size:14px;
+
+}
+
+.page-intro{
+	opacity: .05;
+}
+
+.ps-btn-old::before,
+.ps-btn-new::before{
+	content: '';
+	display: inline-block;
+	background: url(../fonts/arrow-left.svg) no-repeat 50% 50%;
+	background-size: contain;
+	margin: -2px 3px 0 0;
+	height: 12px;
+	width: 12px;
+	vertical-align: middle;
+	opacity: .8;
+}
+.ps-btn-old:hover::before,
+.ps-btn-new:hover::before{
+	opacity: 1;
+}
+.ps-btn-new::before{
+	transform: rotate(180deg);
+}
+
+.ps-shell,
+.swf-panel{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	top: 70px;
+	z-index: 1;
+}
+
+.ps-shell embed,
+.ps-shell iframe{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+
+	/* fix ios iframe https://stackoverflow.com/questions/34320046/iframe-height-issues-on-ios-mobile-safari */
+	width: 100px;
+	min-width: 100%;
+	max-width: 100%;
+}
+.ps-shell .ps-shell-loader{
+	padding: 4em 0;
+	text-align: center;
+}
+.ps-shell .ps-shell-loader p{
+	opacity: .3;
+}
+
+@media (max-width: 1366px) {
+	.header .old,
+	.header .gif,
+	.header .simple{
+		display: none;
+	}
+}
+
+@media (max-width: 1150px) {
+	.header_banner_links{
+		display: none;
+	}
+}
+
+@media (max-width: 501px) {
+	.ps-shell{
+		top: 47px;
+	}
+
+	.header{
+		height: 30px;
+	}
+
+	.header .title a{
+		padding-top: 12px;
+	}
+
+	.header > div{
+		display: none;
+	}
+
+	.header > .title{
+		display: block;
+	}
+}
