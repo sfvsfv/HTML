@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>游戏界面</title>
+<link rel="stylesheet" href="css/nav.css">
+ 
+</head>
+<body>
+
+  <div class="content">
+  	<p style="font-size: 50px;
+            color:greenyellow;
+            background: black;
+ 			padding:25px;
+ 			margin: auto;
+            height:150px;
+            text-align:center;
+            width: 1500px;">精美网站</details> </p>
+  	<marquee width=100%  height=40 bgcolor=yellow>快来一起玩吧</marquee>
+  	
+  	<body background="img/zhangjie.jpg"
+	style=" background-repeat:no-repeat ;
+	background-size:100% 100%;
+	background-attachment: fixed;"
+	>
+
+    <dl>
+        <dt><a href="http://www.4339.com">小游戏</a></dt>
+        <dd >
+        <ul>
+            <li>
+               <a href="http://www.4399.com/flash/209536.htm">冰火人</a>
+               <a href="http://p.37pk49.com/s/1/683/11722.html?uid=510412">女神联盟</a> 
+               <a href="http://www.4399.com/flash/213106.htm">植物大战僵尸</a> 
+               <a href="http://www.4399.com/flash/11487.htm#search3">山地自行车</a> 
+               <a href="http://www.4399.com/special/34.html">黄金矿工</a>
+               <a href="http://www.4399.com/flash/195270.htm">孙悟空大闹天宫</a>
+               <a href="http://www.4399.com/flash/21674.htm">前线战争OL</a>
+            </li>
+        </ul>
+        </dd>
+        <dd class="more"><a href="http://www.4339.com">更多游戏还有哦&gt;&gt;</a></dd>
+        
+    </dl>
+    <dl class="s1">
+        <dt><a href="http://www.baidu.com">游戏网站</a></dt>  
+        <dd >
+        <ul>
+            <li><a href="http://www.4339.com">4339小游戏</a> 
+            	<a href="http://www.6949.com">6949小游戏</a> 
+                <a href="http://3155.4355.cn/">3155小游戏</a>
+                <a href="http://www.4399i.net/">4399i小游戏</a>
+                <a href="http://www.3199.cn/?hmsr=1616">3199小游戏</a>
+                <a href="http://www.7k7k7.com">7k7k7小游戏</a>
+            </li>
+        </ul>
+        </dd>
+        <dd class="more"><a href="http://www.51.com/top/2/">这些网站还不够？&gt;&gt;</a>
+        	
+        </dd>
+    </dl>
+    <dl>
+        <dt><a href="http://www.6655.com/1/yingshi.htm">[影视]</a></dt>
+        <dd >
+        <ul>
+            <li><a href="http://www.iqiyi.com">爱奇艺高清</a>
+                <a href="http://www.tudou.com/">土豆网</a>
+                <a href="http://tv.sohu.com/movie/">搜狐电影</a>
+                <a href="http://tv.cntv.cn/">CNTV</a>
+                <a href="http://www.kktv1.com/c.shtml?c=52560">KK美女视频</a> <a
+                href="http://p.yiqifa.com/s?sid=a4df75c5719e9b11&amp;pid=184&amp;wid=410486&amp;vid=426282&amp;cid=7100&amp;lid=168915&amp;euid=&amp;vwid=">六间房</a>
+            </li>
+        </ul>
+        </dd>
+        <dd class="more"><a href="http://www.6655.com/1/yingshi.htm">更多&gt;&gt;</a>
+        </dd>
+    </dl>
+    <dl class="s1">
+        <dt><a href="http://www.6655.com/1/xiaoshuo.htm">[小说]</a></dt>
+        <dd >
+        <ul>
+            <li><a href="http://www.qdmm.com/">起点女生网</a>
+                <a href="http://www.zongheng.com/?co=1616">纵横中文网</a>
+                <a href="http://p.yiqifa.com/c?s=3b2f15ba&amp;w=88243&amp;c=6805&amp;i=23342&amp;l=0&amp;e=&amp;t=http://www.zazhipu.com/">杂志铺</a>
+                <a href="http://www.xxsy.net/">潇湘书院</a>
+                <a href="http://www.qidian.com/Default.aspx">起点</a>
+                <a href="http://www.xs8.cn/">言情小说吧</a></li>
+        </ul>
+        </dd>
+        <dd class="more"><a href="http://www.6655.com/1/xiaoshuo.htm">更多&gt;&gt;</a>
+        </dd>
+    </dl>
+    <dl>
+        <dt><a href="http://www.6655.com/1/youxi.htm">[游戏]</a></dt>
+        <dd >
+        <ul>
+            <li><a href="http://365.uc108.com/">同城游棋牌</a>
+                <a href="http://games.sina.com.cn/">新浪游戏</a>
+                <a href="http://p.yiqifa.com/c?s=ae39a645&amp;w=154815&amp;c=6756&amp;i=23904&amp;l=0&amp;e=&amp;t=http://www.5173.com/">5173游戏交易</a>
+                <a href="http://www.17173.com/">17173游戏</a>
+                <a href="http://www.duowan.com/">多玩游戏</a>
+            </li>
+        </ul>
+        </dd>
+        <dd class="more"><a href="http://www.6655.com/1/youxi.htm">更多&gt;&gt;</a>
+        </dd>
+    </dl>
+    <dl class="s1">
+        <dt><a href="http://www.6655.com/1/yinyue.htm">[音乐]</a></dt>
+        <dd >
+        <ul>
+            <li><a href="http://www.1ting.com">一听音乐网</a>
+                <a href="http://mp3.sogou.com/">搜狗音乐</a>
+                <a href="http://music.baidu.com">百度mp3</a>
+                <a href="http://www.yinyuetai.com/">音悦台MV</a>
+                <a href="http://www.iqiyi.com/zongyi/superboy.html">快乐男声</a>
+            </li>
+        </ul>
+        </dd>
+        <dd class="more"><a href="http://www.6655.com/1/yinyue.htm">更多&gt;&gt;</a>
+        </dd>
+    </dl>
+    <dl>
+        <dt><a href="http://www.6655.com/1/jiaoyou.htm">[交友]</a></dt>
+        <dd >
+        <ul>
+            <li><a
+                href="http://reg.jiayuan.com/st/?id=421710&amp;url=http://reg.jiayuan.com">世纪佳缘</a>
+            <a href="http://www.zhiji.com/?ad=1616" class="green">同城交友网</a>
+            <a   href="http://www.zhenai.com/901934.html">珍爱网</a><a
+            <a    href="http://www.9see.com/go123?from=120_1">美女秀场</a>
+             <a   href="http://www.iqiyi.com/zongyi/fcwr.html">非诚勿扰</a>
+            </li>
+        </ul>
+        </dd>
+        <dd class="more"><a href="http://www.6655.com/1/jiaoyou.htm">更多&gt;&gt;</a>
+        </dd>
+    </dl>
+    <dl class="s1">
+        <dt><a href="http://www.6655.com/1/lvyou.htm">[旅游]</a></dt>
+        <dd >
+        <ul>
+            <li>
+               <a  href="http://vacations.ctrip.com/?allianceid=1091&amp;sid=1227&amp;ouid=">携程旅游</a>
+               <a  href="http://www.tuniu.com/?p=1627&amp;cmpid=mkt_08005301&amp;utm_campaign=daohang&amp;utm_source=1616.net&amp;utm_medium=textlink"</a>                class="green">途牛旅游网</a><a href="http://www.zoutu.com/">云南旅游</a><a
+               <a  href="http://hotel.elong.com/?banid=1616">艺龙订酒店</a> 
+               <a  href="http://www.qunar.com/?ex_track=auto_4f4dd298">去哪儿旅游</a>
+               <a  href="http://detail.tmall.com/item.htm?id=21737099723">迪士尼门票</a> 
+               <a  href="http://www.17u.cn/FlightQuery.aspx#refid=14748221">同程机票</a>
+            </li>
+        </ul>
+        </dd>
+        <dd class="more"><a href="http://www.6655.com/1/lvyou.htm">更多&gt;&gt;</a>
+        </dd>
+    </dl>
+     
+</div>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $("dl:odd").css("background","#ececec")
+    })
+</script>
+
+<canvas id='canvas' width="600" height="600"></canvas>
+
+</body>
+</html>
