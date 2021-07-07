@@ -1,0 +1,31 @@
+@charset "utf-8"; 
+.container{
+	height: 900px;
+
+}
+.left{
+	width: 300px;
+	height: 1200px;
+float: left;
+}
+.center{
+   width: 900px;
+	height: 900px;
+	align-content: center;
+float: left;
+}
+.right{
+     width: 300px;
+	height: 900px;
+float: left;
+}
+body{
+				background-size: cover;
+				background-color: #D7FFEE;
+			}
+a{
+				font-size: 25px;
+			}
+			h1{text-align: center;}
+			p{font-size: 20px}
+			
