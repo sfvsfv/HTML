@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>川川学长汉字转拼音</title>
+    <meta name="keywords" content="中文转换拼音" />
+	<meta name="description" content="在线中文汉字转换拼音工具" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+     <link href="css/css.css" rel="stylesheet">
+     <script src="js/pinyin.js"></script>     
+     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    </head>
+  <body>
+<div class="container">
+<div class="row text-center topmarg">
+<p><img src="img/logo.jpg"></p>
+<p><h2>汉字转拼音</h2></p>
+<hr>
+</div>
+</div>
+<div class="container">
+<blockquote><p>服务于语言文字学习</p></blockquote>
+<h4><span class="glyphicon glyphicon-list" aria-hidden="true"></span>川川学长汉字一键转拼音</h4><hr>
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="laobuluo_pinyin">
+    <textarea id="content" class="form-control" rows="10">请输入内容</textarea>
+       <br>
+       <input class="btn btn-default" id="conv" type="button" value="转换" onclick="trans();"/>
+                <input class="btn btn-default" id="copy" type="button" value="复制" onclick="copy('result');"/>
+                <input class="btn btn-default" id="remove" type="button" value="清空结果" onclick="remove();"/>
+    <br>
+    <textarea id="result" class="form-control" rows="10"></textarea>
+    <script type="text/javascript">
+          getid('content').focus();
+          getid('content').select();
+    </script>
+    <hr>
+
+    </div>
+
+  </div> 
+  
+</div>
+
+
+</div>
+
+<div class="footer">
+  <div class="container"><p>&copy; 2021<a href="#">制作者QQ：2835809579</a></p>联系作者<a href="https://yanghanwen.xyz/img/qq.png" target="_Blank"><button class="dd-1">请点击</button></a>
+</div>
+ 
+   
+</body>
+</html>
