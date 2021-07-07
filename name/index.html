@@ -1,0 +1,484 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>输入名字大乱斗2.0</title>
+
+<style type="text/css">
+BODY {filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr='#007AE5',endcolorstr='#57C4F6',gradientType=0);}
+TextArea {font-size:9pt;border:1px solid #7F9DB9;}
+.text {width:200px;height:20px;font-size:10pt;color:#0079C2;text-align:center;border:1px solid #0079C2;}
+.Input {height: 20px; text-align: center; font-size: 10pt; border: 1px solid #0079C2; color: #0079C2; background-color: #ffffff;}
+td{text-align:center;font-weight:400;font-size:9pt}
+</style>
+</head>
+<body style="margin:0px">
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="0" width="760" height="500" bgcolor="#A1FFBA">
+  <tr>
+    <td width="240" height="180">
+      <div align="center"><center>
+      <table border="1" cellpadding="0" cellspacing="0" bordercolor="#0079C2" height="160" width="220" style="margin: 10px">
+      <tr>
+        <td width="85" height="20">
+          <span style="font-size: 9pt"><input type="text" class="Input" id="X" size="8" style="width: 80px; height: 20; font-size: 11pt; font-weight: 400; background-color:#EEEEEE" value="" name="X"></span>
+        </td>
+        <td width="50" height="20"><span style="font-size: 9pt">姓名</span></td>
+        <td width="85" height="20">
+          <span style="font-size: 9pt"><input type="text" class="Input" id="Y" size="8" style="width: 80px; height: 20; font-size: 11pt; font-weight: 400; background-color:#EEEEEE" value="" name="Y"></span>
+        </td>
+      </tr>
+      <tr>
+        <td id="X0" width="85" height="20"><span style="font-size: 9pt">0/0</span></td>
+        <td width="50" height="20"><span style="font-size: 9pt">体力</span></td>
+        <td id="Y0" width="85" height="20"><span style="font-size: 9pt">0/0</span></td>
+      </tr>
+      <tr>
+        <td id="X1" width="85" height="20"><span style="font-size: 9pt">0</span></td>
+        <td width="50" height="20"><span style="font-size: 9pt">攻击</span></td>
+        <td id="Y1" width="85" height="20"><span style="font-size: 9pt">0</span></td>
+      </tr>
+      <tr>
+        <td id="X2" width="85" height="20"><span style="font-size: 9pt">0</span></td>
+        <td width="50" height="20"><span style="font-size: 9pt">防御</span></td>
+        <td id="Y2" width="85" height="20"><span style="font-size: 9pt">0</span></td>
+      </tr>
+      <tr>
+        <td id="X3" width="85" height="20"><span style="font-size: 9pt">0</span></td>
+        <td width="50" height="20"><span style="font-size: 9pt">速度</span></td>
+        <td id="Y3" width="85" height="20"><span style="font-size: 9pt">0</span></td>
+      </tr>
+      <tr>
+        <td id="X4" width="85" height="20"><span style="font-size: 9pt">0</span></td>
+        <td width="50" height="20"><span style="font-size: 9pt">命中</span></td>
+        <td id="Y4" width="85" height="20"><span style="font-size: 9pt">0</span></td>
+      </tr>
+      <tr>
+        <td id="X5" width="85" height="20"><span style="font-size: 9pt">0</span></td>
+        <td width="50" height="20"><span style="font-size: 9pt">运气</span></td>
+        <td id="Y5" width="85" height="20"><span style="font-size: 9pt">0</span></td>
+      </tr>
+      <tr>
+        <td id="X6" width="85" height="20"><span style="font-size: 9pt">0</span></td>
+        <td width="50" height="20"><span style="font-size: 9pt">智商</span></td>
+        <td id="Y6" width="85" height="20"><span style="font-size: 9pt">0</span></td>
+      </tr>
+      <tr>
+        <td id="X7" width="85" height="20"><span style="font-size: 9pt">0</span></td>
+        <td width="50" height="20"><span style="font-size: 9pt">人品</span></td>
+        <td id="Y7" width="85" height="20"><span style="font-size: 9pt">0</span></td>
+      </tr>
+    </table>
+    </center></div><p>
+      <input type="button" id="SH" onClick="HP.value=number(HP.value)+50;" value="HP+" title="额外增加HP值" style="margin:0px;width:30px;height:20px"><input type="Text" id="HP" title="额外增加HP值" value="0" style="margin:0px;width:40px;height:20px">
+      <input type="button" id="OK" class="Input" onClick="$('Text').value='';if(X.value!=''&&Y.value!=''){form_load();sInput(1);}else{alert('请输入两个人物姓名!')};" value="开始作战" style="margin:0px"></td>
+    <td width="560" rowspan="2" height="500" bgcolor="#A1FFBA">
+      <textarea id="Text" style="width:540px;height:540px;font-size:9pt;padding:2px;margin:2px;" rows="1" cols="20"></textarea> 
+    </td>
+  </tr>
+  <tr>
+    <td width="240" height="300" style="font-size: 10pt;font-weight: 400;color:#008000;">输入名字大乱斗<br><br>作者:川川学长<br><br>QQ:2835809579</td>
+  </tr>
+</table>
+</center></div>
+
+
+<script Language="javascript"> 
+
+document.body.style.cssText = self.location!=top.location?"margin:0px":"margin:15px";
+
+var number=function(x){if(isNaN(parseInt(x))==false){x=parseInt(x)}else{x=0}; return x};
+	
+var $=function(id){return document.getElementById(id)};
+
+function sInput(index){
+	if(index==0){
+		X.disabled=false;
+		Y.disabled=false;
+		SH.disabled=false;
+		HP.disabled=false;
+		OK.disabled=false;
+	}else{
+		X.disabled=true;
+		Y.disabled=true;
+		SH.disabled=true;
+		HP.disabled=true;
+		OK.disabled=true;
+	}
+}
+
+var MyX; var MyY; var x=0; var y=0;
+var XA = new Array(0,0,0,0,0,0,0,0); 
+var YA = new Array(0,0,0,0,0,0,0,0);
+var XB = new Array(0,0,0,0,0,0,0,0); 
+var YB = new Array(0,0,0,0,0,0,0,0);
+
+function form_load(){
+if(typeof(MyMarX)!="undefined"){clearTimeout(MyX)};
+if(typeof(MyMarY)!="undefined"){clearTimeout(MyY)};
+
+var Hex = function(x){return parseInt(parseInt(x,16)/820)+20 };
+
+    var XM = hex_md5( $('X').value ); 
+    var YM = hex_md5( $('Y').value );
+    for(var i=0;i < 8;i++){ 
+    	XB[i] = XA[i] = Hex(XM.substr(i*4,4)); 
+    	YB[i] = YA[i] = Hex(YM.substr(i*4,4)); 
+    }
+    for(var i=0;i < 8;i++){
+    	$('X'+i).innerHTML = "<font color='#00AA00'>"+XA[i]+"</font>"; 
+    	$('Y'+i).innerHTML = "<font color='#00AA00'>"+YA[i]+"</font>"; 
+    }
+    XB[0]=XA[0]=parseInt(XA[0]+XA[1]+XA[2]+XA[3]+XA[4]+XA[5]+XA[6]+XA[7]+sAddHP)+number(HP.value);
+    YB[0]=YA[0]=parseInt(YA[0]+YA[1]+YA[2]+YA[3]+YA[4]+YA[5]+YA[6]+YA[7]+sAddHP)+number(HP.value);
+
+    XB[7]=XA[7]=parseInt((XA[1]+XA[6]+XA[7])/3);
+    YB[7]=YA[7]=parseInt((YA[1]+YA[6]+YA[7])/3);
+
+    $('X0').innerHTML = "<font color='#FF0000'>"+XA[0]+"</font>/" + XB[0];
+    $('Y0').innerHTML = "<font color='#FF0000'>"+YA[0]+"</font>/" + YB[0];
+    x=0; y=0;
+
+    var T = "输入名字大乱斗，2.0版  作者:龙龙学长"+"\n\r\n\r";
+    T += X.value+"  HP:"+(XB[0]-number(HP.value))+(number(HP.value)!=0?"+"+number(HP.value):"")+" 攻:"+XB[1]+" 防:"+XB[2]+" 速:"+XB[3]+" 技:"+XB[4]+" 运:"+XB[5]+" 智:"+XB[6]+" 品:"+XB[7]+"\n\r";
+    T += Y.value+"  HP:"+(YB[0]-number(HP.value))+(number(HP.value)!=0?"+"+number(HP.value):"")+" 攻:"+YB[1]+" 防:"+YB[2]+" 速:"+YB[3]+" 技:"+YB[4]+" 运:"+YB[5]+" 智:"+YB[6]+" 品:"+YB[7]+"\n\r";
+    $('Text').value = T+"\n\r";
+   if(XB[3]>YB[3]){setTimeout("MD5_PK(x,'X')",1000)}else{setTimeout("MD5_PK(y,'Y')",1000)};
+}
+
+function MD5_PK(index,id){
+  var md5 = "0" + hex_md5( $(id).value ); 
+  if(id=="X"){ 
+  	if(XA[0] > 0) MyY = setTimeout("MD5_PK(y++,'Y')",sTimer);
+  	OK_PK(parseInt(md5.substr(index%32,2),16)%32, id, YA, XA, YB, XB);
+  }else{ 
+    if(YA[0] > 0) MyX = setTimeout("MD5_PK(x++,'X')",sTimer);
+    OK_PK( parseInt(md5.substr(index%32,2),16)%32, id, XA, YA, XB, YB);
+  }
+}
+
+var sTimer = 500;  //文字显示速度
+var sAddHP = 200;  //额外增加HP值
+
+function OK_PK(event,id,A,B,C,D){
+var E = function(x){if(number(x) < 0){x = 0}; return number(x)}
+var T = function(x){if(number(x) > 99){x = 99}; return number(x)}
+if(x==0||y==0){event=0}; //第一次进攻为第0项效果
+/* SH.value = event */
+  if(XA[0]>0 && YA[0]>0){
+    switch(event){
+    case 0: text = "[XX]向[YY]发起攻击,[YY]受到"+E(E(A[0]*0.1-A[2]+B[1])+A[0]*0.05)+"点伤害";A[0]=E(A[0]-E(E(A[0]*0.1-A[2]+B[1])+A[0]*0.05)); break;
+    case 1: text = "[XX]向[YY]发起攻击,"+((B[4]<A[4])?"但是被[YY]闪开了":"[YY]受到"+E(E(A[0]*0.1-A[2])+B[4]+A[0]*0.05)+"点伤害");if(A[4]<B[4]){A[0]=E(A[0]-E(E(A[0]*0.1-A[2])+B[4]+A[0]*0.05))};  break;
+    case 2: text = "[XX]向[YY]发起攻击,[YY]防御,[YY]受到"+E(B[1]*B[4]/200)+"点伤害";A[0]=E(A[0]-E(B[1]*B[4]/200)); break;
+    case 3: text = "[XX]向[YY]发起攻击,"+(B[4]>A[4]?"[YY]受到"+E(E(B[1]+B[4]-50)+A[0]*0.05)+"点伤害":"但是没打着,被[YY]反击损伤"+E(A[0]*0.1+A[1]+A[4])+"点");if(B[4]>A[4]){A[0]=E(A[0]-E(E(B[1]+B[4]-50)+A[0]*0.05))}else{B[0]=E(B[0]-E(A[B]*0.1+A[1]+A[4]))}; break;
+    case 4: text = ((B[0]<D[0]/5&&B[0]<A[0])?"[XX]作出垂死抗争,所有数值上升10%":"[XX]服用了伟哥,[XX]的体力增加了"+E(D[0]*0.1)+"点");if(B[0]<D[0]/5&&B[0]<A[0]){for(var i=1;i<8;i++){B[i]=T(B[i]+E(D[i]*0.1))} ;B[0]+=E(D[0]*0.1)}else{B[0]+=E(D[0]*0.1)}; break;
+    case 5: text = (B[4]>A[4]?"[XX]诅咒[YY],[YY]所有数值下降10%":"[XX]辱骂[YY],[YY]发怒了,武力增加10%");if(B[4]>A[4]){for(var i=0;i<8;i++){A[i]=E(A[i]-E(C[i]*0.1))}}else{A[1]=T(A[1]+C[0]*0.1)}; break;
+    case 6: text = "[XX]诅咒[YY],但是没有成功,[XX]的体力降低10%"; B[0]=E(B[0]-D[0]*0.1); break
+    case 7: text = (B[1]<A[1]?"[XX]一拳打得[YY]满地找牙":"[XX]一脚踢中了[YY]的命根子")+",[YY]受到"+E(E(A[0]*0.1+B[1]-A[2])+A[0]*0.05)+"点伤害";A[0]=E(A[0]-E(E(A[0]*0.1+B[1]-A[2])+A[0]*0.05)); break;
+    case 8: text = "[XX]发狂了,上前咬了[YY]一口,"+(B[1]>A[1]?"[YY]受到"+E(A[0]*0.1+B[1])+"点伤害":"但是遭到[YY]反击,体力减少"+E(B[0]*0.1+A[1])+"点");if(B[1]>A[1]){A[0]=E(A[0]-E(A[0]*0.1+B[1]))}else{B[0]=E(B[0]-E(B[0]*0.1+A[1]))}; break;
+    case 9: text = (B[6]>A[6]?"[XX]约凤姐与[YY]相亲,[YY]非常满意,[XX]属性提升10%":"[XX]邀凤姐与[YY]私会,[YY]功能衰退,设备损伤10%");if(B[6]>A[6]){for(var i=1;i<8;i++){B[i]=T(B[i]+E(D[i]*0.1))}; B[0]+=E(D[0]*0.1)}else{for(var i=0;i<8;i++){A[i]=E(A[i]-E(C[i]*0.1))}}; break;
+    case 10: text = "[XX]用吃奶的力气咬了[YY]一口,[YY]受到"+E((B[1]+A[1]-A[2])*B[4]/100)+"点伤害";A[0]=E(A[0]-E((B[1]+A[1]-A[2])*B[4]/100)); break;
+    case 11: text = "[XX]冲上去咬了[YY]一口,但牙齿被打掉了,[XX]体力减少"+E(A[1])+"点"; B[0]=E(B[0]-E(A[1])); break;
+    case 12: text = "[XX]请春哥前来爆菊花,[YY]"+(A[6]>B[6]||A[7]>B[7]?"强列反抗,但还是受到"+E(A[0]*0.1+B[6])+"点伤害":"受到"+E(A[0]*0.1+B[6])+"点伤害"); if(A[6]>B[6]||A[7]>B[7]){A[0]=E(A[0]-E(A[0]*0.1+B[6]))}else{A[0]=A[0]-E(A[0]*0.1+B[6])}; break;
+    case 13: text = "[XX]携凤姐出现,[YY]兽性大发,[YY]属性降低了10%";for(var i=0;i<8;i++){A[i]=E(A[i]-E(C[i]*0.1))}; break;
+    case 14: text = "[XX]拿出电动玩具对[YY]实施侵犯,[YY]受到"+E(A[0]*0.1+B[1]+B[7])+"点伤害";A[0]=E(A[0]-E(A[0]*0.1+B[1]+B[7]));  break;
+    case 15: text = "[XX]向[YY]发起攻击,"+(B[1]<A[1]?"但受到[YY]反击,[XX]体力减少"+E(B[0]*0.1+A[1])+"点":"[YY]体力减少"+E(A[0]*0.1+B[1])+"点");if(B[1]<A[1]){B[0]=E(B[0]-E(B[0]*0.1+A[1]))}else{A[0]=E(A[0]-E(A[0]*0.1+B[1]))}; break;
+    case 16: text = "[XX]使出降龙一巴掌,[YY]受到"+E(A[0]*B[1]/100*(100-A[2])/100)+"点伤害";A[0]=E(A[0]-E(A[0]*B[1]/100*(100-A[2])/100)); break;
+    case 17: text = "[XX]使出降龙一巴掌,"+(B[1]>A[1]||B[6]>A[6]?"[YY]受到"+E(A[0]*0.1+B[1])+"点伤害":"却不敌[YY]的乾坤大挪移,受到"+E(B[0]*0.1+A[1])+"点伤害");if(B[1]>A[1]||B[6]>A[6]){A[0]=E(A[0]-E(A[0]*0.1+B[1]))}else{B[0]=E(B[0]-E(B[0]*0.1+A[1]))}; break;
+    case 18: text = "[XX]使用金创药,"+((A[5]>B[5]||A[0]<B[0]/2)?"确被[YY]抢去吃了,[YY]体力恢复了"+E(A[0]*0.1+A[5])+"点":"[XX]体力恢复"+E(D[0]*0.1+B[5])+"点");if(A[5]>B[5]||A[0]<B[0]/2){A[0]+=E(C[0]*0.1+A[5])}else{B[0]+=E(D[0]*0.1+B[5])}; break;
+    case 19: text = "[XX]向[YY]发起攻击,[YY]受到"+E(B[1]*B[4]/100+A[0]*0.05)+"点伤害";A[0]=E(A[0]-E(B[1]*B[4]/100+A[0]*0.05)); break;
+    case 20: text = "[XX]向[YY]发起攻击,[YY]受到"+E(B[1]*2-A[2]+A[0]*0.05)+"点伤害";A[0]=E(A[0]-E(B[1]/2-A[2]+A[0]*0.05));  break;
+    case 21: text = "[XX]向[YY]投毒,[YY]用大粪还击,[XX]所有数值下降10%"; for(var i=0;i<8;i++){B[i]=E(B[i]-E(D[i]*0.1))}; break;
+    case 22: text = "[XX]向[YY]投毒,"+(A[6]<B[6]?"[YY]所有数值下降10%":"[YY]体力下降了"+E(C[0]*0.1)+"点");if(A[6]<B[6]){for(var i=0;i<8;i++){A[i]=E(A[i]-E(C[i]*0.1))}}else{A[0]=E(A[0]-E(C[0]*0.1))}; break;
+    case 23: text = "[XX]送三鹿奶粉给[YY]喝,"+((A[5]>B[5])?"[YY]走狗屎运,体力恢复"+(A[0]<50&&A[0]<B[0]?E(A[0]*0.1):E(A[5]*0.1))+"点":"[YY]内分秘失调,体力受损"+E(B[5]+A[0]*0.1)+"点"); if(A[5]>B[5]){A[0]+=(A[0]<50&&A[0]<B[0]?E(A[0]*0.1):E(A[5]*0.1))}else{A[0]=A[0]-E(B[5]+A[0]*0.1)};  break;
+    case 24: text = ((A[3]>B[3])?"[XX]被打晕了,[YY]趁机偷袭,[XX]受到"+E(A[3]/2)+"点伤害":"[XX]向[YY]发起攻击,但是被[YY]闪开了");if(A[3]>B[3]){B[0]=E(B[0]-E(A[3]/2))}; break;
+    case 25: text = "[XX]送充气娃娃给[YY],"+(A[6]>B[6]?"[YY]越战越猛,体力提高"+E(B[6]/2)+"点":"[YY]乐不思蜀,体力受损"+E(B[6]+A[0]*0.1)+"点");if(A[6]>B[6]){A[0]+=E(B[6]/2)}else{A[0]=E(A[0]-E(B[6]+A[0]*0.1))};  break;
+    case 26: text = "[XX]使用马铁锤砸向[YY],"+((B[4]<A[4])?"但是没有命中,[YY]没有受到伤害":"[YY]头破血流,受到"+E(B[1]+100-A[2]+E(A[0]*0.1))+"点伤害");if(A[4]<B[4]){A[0]=E(A[0]-(B[1]+100-A[2]+E(A[0]*0.1)))};  break;
+    case 27: text = "[XX]送脑白金给[YY]喝,"+(A[6]<B[6]?"[YY]长得膘肥体状,属性降低了10%":"[YY]长得四肢发达,属性降低了10%"); for(var i=0;i<8;i++){A[i]=E(A[i]-E(C[i]*0.1))};  break;
+    case 28: text = "[XX]使用马铁锤砸向[YY],"+((B[4]<A[4])?"但是没有命中,[YY]没有受到伤害":"[YY]头破血流,受到"+E(B[1]+100-A[2]+E(A[0]*0.1))+"点伤害");if(A[4]<B[4]){A[0]=E(A[0]-(B[1]+100-A[2]+E(A[0]*0.1)))};  break;
+    case 29: text = "[XX]拿出电动玩具对[YY]实施侵犯,"+ ((B[7] < A[7])?"[YY]不感兴趣,没有受到损伤":"[YY]受到"+E(B[7]+100-A[7]+E(A[0]*0.1))+"点伤害");if(A[7]<B[7]){A[0]=E(A[0]-E(B[7]+100-A[7]+E(A[0]*0.1)))};  break;
+    case 30: text = (B[3]>A[3])?"[XX]向[YY]发起攻击,[YY]受到"+E(B[3]+A[0]*0.05)+"点伤害":"[YY]发动连继攻击";if(A[3]<B[3]){A[0]=E(A[0]-E(B[3]+A[0]*0.05))}; break;
+    case 31: text = (B[2]>A[2])?"[XX]向[YY]发起攻击,[YY]受到"+E(E(A[0]*0.1-A[2])+B[1])+"点伤害":"[XX]被打得晕了,[YY]继续发动攻击";if(B[2]>A[2]){A[0]=E(A[0]-E(E(A[0]*0.1-A[2])+B[1]))}; break;
+    default: text = "[XX]向[YY]发起攻击,[YY]受到"+E(E(A[0]*0.1-A[2])+E(A[0]*0.05))+"点伤害";A[0]=E(A[0]-E(E(A[0]*0.1-A[2])+E(A[0]*0.05))); break;
+    }
+    
+    if(id=="X"){
+      $('Text').value += text.replace(/XX/g, X.value).replace(/YY/g, Y.value) + "\n\r";
+    }else{
+      $('Text').value += text.replace(/XX/g, Y.value).replace(/YY/g, X.value) + "\n\r";
+    }
+    if(XA[0] <= 0){$('Text').value += "["+X.value+"]被击败了\n\r"; clearTimeout(MyX);sInput(0);}; 
+    if(YA[0] <= 0){$('Text').value += "["+Y.value+"]被击败了\n\r"; clearTimeout(MyY);sInput(0);};
+    for(var i=0;i < 8;i++){ if(XA[i] < 0){XA[i] = 0}; if(YA[i] < 0){YA[i] = 0} };
+    for(var i=1;i < 8;i++){
+      $('X'+i).innerHTML = XA[i] >= XB[i] ? "<font color='#00AA00'>"+XA[i]+"</font>" : "<font color='#FF0000'>" + XA[i]+"</font>"; 
+      $('Y'+i).innerHTML = YA[i] >= YB[i] ? "<font color='#00AA00'>"+YA[i]+"</font>" : "<font color='#FF0000'>" + YA[i]+"</font>"; 
+    }
+    $('X0').innerHTML = "<font color='#FF0000'>"+XA[0]+"</font>/<font color='#00AA00'>" + XB[0]+"</font>"; 
+    $('Y0').innerHTML = "<font color='#FF0000'>"+YA[0]+"</font>/<font color='#00AA00'>" + YB[0]+"</font>"; 
+  }
+}
+</script>
+
+<script type="text/javascript">
+/*
+ * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
+ * Digest Algorithm, as defined in RFC 1321.
+ * Version 2.1 Copyright (C) Paul Johnston 1999 - 2002.
+ * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
+ * Distributed under the BSD License
+ * See http://pajhome.org.uk/crypt/md5 for more info.
+ */
+
+/*
+ * Configurable variables. You may need to tweak these to be compatible with
+ * the server-side, but the defaults work in most cases.
+ */
+var hexcase = 0;  /* hex output format. 0 - lowercase; 1 - uppercase        */
+var b64pad  = ""; /* base-64 pad character. "=" for strict RFC compliance   */
+var chrsz   = 8;  /* bits per input character. 8 - ASCII; 16 - Unicode      */
+
+/*
+ * These are the functions you'll usually want to call
+ * They take string arguments and return either hex or base-64 encoded strings
+ */
+function hex_md5(s){ return binl2hex(core_md5(str2binl(s), s.length * chrsz));}
+function b64_md5(s){ return binl2b64(core_md5(str2binl(s), s.length * chrsz));}
+function str_md5(s){ return binl2str(core_md5(str2binl(s), s.length * chrsz));}
+function hex_hmac_md5(key, data) { return binl2hex(core_hmac_md5(key, data)); }
+function b64_hmac_md5(key, data) { return binl2b64(core_hmac_md5(key, data)); }
+function str_hmac_md5(key, data) { return binl2str(core_hmac_md5(key, data)); }
+
+/*
+ * Perform a simple self-test to see if the VM is working
+ */
+function md5_vm_test()
+{
+  return hex_md5("abc") == "900150983cd24fb0d6963f7d28e17f72";
+}
+
+/*
+ * Calculate the MD5 of an array of little-endian words, and a bit length
+ */
+function core_md5(x, len)
+{
+  /* append padding */
+  x[len >> 5] |= 0x80 << ((len) % 32);
+  x[(((len + 64) >>> 9) << 4) + 14] = len;
+
+  var a =  1732584193;
+  var b = -271733879;
+  var c = -1732584194;
+  var d =  271733878;
+
+  for(var i = 0; i < x.length; i += 16)
+  {
+    var olda = a;
+    var oldb = b;
+    var oldc = c;
+    var oldd = d;
+
+    a = md5_ff(a, b, c, d, x[i+ 0], 7 , -680876936);
+    d = md5_ff(d, a, b, c, x[i+ 1], 12, -389564586);
+    c = md5_ff(c, d, a, b, x[i+ 2], 17,  606105819);
+    b = md5_ff(b, c, d, a, x[i+ 3], 22, -1044525330);
+    a = md5_ff(a, b, c, d, x[i+ 4], 7 , -176418897);
+    d = md5_ff(d, a, b, c, x[i+ 5], 12,  1200080426);
+    c = md5_ff(c, d, a, b, x[i+ 6], 17, -1473231341);
+    b = md5_ff(b, c, d, a, x[i+ 7], 22, -45705983);
+    a = md5_ff(a, b, c, d, x[i+ 8], 7 ,  1770035416);
+    d = md5_ff(d, a, b, c, x[i+ 9], 12, -1958414417);
+    c = md5_ff(c, d, a, b, x[i+10], 17, -42063);
+    b = md5_ff(b, c, d, a, x[i+11], 22, -1990404162);
+    a = md5_ff(a, b, c, d, x[i+12], 7 ,  1804603682);
+    d = md5_ff(d, a, b, c, x[i+13], 12, -40341101);
+    c = md5_ff(c, d, a, b, x[i+14], 17, -1502002290);
+    b = md5_ff(b, c, d, a, x[i+15], 22,  1236535329);
+
+    a = md5_gg(a, b, c, d, x[i+ 1], 5 , -165796510);
+    d = md5_gg(d, a, b, c, x[i+ 6], 9 , -1069501632);
+    c = md5_gg(c, d, a, b, x[i+11], 14,  643717713);
+    b = md5_gg(b, c, d, a, x[i+ 0], 20, -373897302);
+    a = md5_gg(a, b, c, d, x[i+ 5], 5 , -701558691);
+    d = md5_gg(d, a, b, c, x[i+10], 9 ,  38016083);
+    c = md5_gg(c, d, a, b, x[i+15], 14, -660478335);
+    b = md5_gg(b, c, d, a, x[i+ 4], 20, -405537848);
+    a = md5_gg(a, b, c, d, x[i+ 9], 5 ,  568446438);
+    d = md5_gg(d, a, b, c, x[i+14], 9 , -1019803690);
+    c = md5_gg(c, d, a, b, x[i+ 3], 14, -187363961);
+    b = md5_gg(b, c, d, a, x[i+ 8], 20,  1163531501);
+    a = md5_gg(a, b, c, d, x[i+13], 5 , -1444681467);
+    d = md5_gg(d, a, b, c, x[i+ 2], 9 , -51403784);
+    c = md5_gg(c, d, a, b, x[i+ 7], 14,  1735328473);
+    b = md5_gg(b, c, d, a, x[i+12], 20, -1926607734);
+
+    a = md5_hh(a, b, c, d, x[i+ 5], 4 , -378558);
+    d = md5_hh(d, a, b, c, x[i+ 8], 11, -2022574463);
+    c = md5_hh(c, d, a, b, x[i+11], 16,  1839030562);
+    b = md5_hh(b, c, d, a, x[i+14], 23, -35309556);
+    a = md5_hh(a, b, c, d, x[i+ 1], 4 , -1530992060);
+    d = md5_hh(d, a, b, c, x[i+ 4], 11,  1272893353);
+    c = md5_hh(c, d, a, b, x[i+ 7], 16, -155497632);
+    b = md5_hh(b, c, d, a, x[i+10], 23, -1094730640);
+    a = md5_hh(a, b, c, d, x[i+13], 4 ,  681279174);
+    d = md5_hh(d, a, b, c, x[i+ 0], 11, -358537222);
+    c = md5_hh(c, d, a, b, x[i+ 3], 16, -722521979);
+    b = md5_hh(b, c, d, a, x[i+ 6], 23,  76029189);
+    a = md5_hh(a, b, c, d, x[i+ 9], 4 , -640364487);
+    d = md5_hh(d, a, b, c, x[i+12], 11, -421815835);
+    c = md5_hh(c, d, a, b, x[i+15], 16,  530742520);
+    b = md5_hh(b, c, d, a, x[i+ 2], 23, -995338651);
+
+    a = md5_ii(a, b, c, d, x[i+ 0], 6 , -198630844);
+    d = md5_ii(d, a, b, c, x[i+ 7], 10,  1126891415);
+    c = md5_ii(c, d, a, b, x[i+14], 15, -1416354905);
+    b = md5_ii(b, c, d, a, x[i+ 5], 21, -57434055);
+    a = md5_ii(a, b, c, d, x[i+12], 6 ,  1700485571);
+    d = md5_ii(d, a, b, c, x[i+ 3], 10, -1894986606);
+    c = md5_ii(c, d, a, b, x[i+10], 15, -1051523);
+    b = md5_ii(b, c, d, a, x[i+ 1], 21, -2054922799);
+    a = md5_ii(a, b, c, d, x[i+ 8], 6 ,  1873313359);
+    d = md5_ii(d, a, b, c, x[i+15], 10, -30611744);
+    c = md5_ii(c, d, a, b, x[i+ 6], 15, -1560198380);
+    b = md5_ii(b, c, d, a, x[i+13], 21,  1309151649);
+    a = md5_ii(a, b, c, d, x[i+ 4], 6 , -145523070);
+    d = md5_ii(d, a, b, c, x[i+11], 10, -1120210379);
+    c = md5_ii(c, d, a, b, x[i+ 2], 15,  718787259);
+    b = md5_ii(b, c, d, a, x[i+ 9], 21, -343485551);
+
+    a = safe_add(a, olda);
+    b = safe_add(b, oldb);
+    c = safe_add(c, oldc);
+    d = safe_add(d, oldd);
+  }
+  return Array(a, b, c, d);
+
+}
+
+/*
+ * These functions implement the four basic operations the algorithm uses.
+ */
+function md5_cmn(q, a, b, x, s, t)
+{
+  return safe_add(bit_rol(safe_add(safe_add(a, q), safe_add(x, t)), s),b);
+}
+function md5_ff(a, b, c, d, x, s, t)
+{
+  return md5_cmn((b & c) | ((~b) & d), a, b, x, s, t);
+}
+function md5_gg(a, b, c, d, x, s, t)
+{
+  return md5_cmn((b & d) | (c & (~d)), a, b, x, s, t);
+}
+function md5_hh(a, b, c, d, x, s, t)
+{
+  return md5_cmn(b ^ c ^ d, a, b, x, s, t);
+}
+function md5_ii(a, b, c, d, x, s, t)
+{
+  return md5_cmn(c ^ (b | (~d)), a, b, x, s, t);
+}
+
+/*
+ * Calculate the HMAC-MD5, of a key and some data
+ */
+function core_hmac_md5(key, data)
+{
+  var bkey = str2binl(key);
+  if(bkey.length > 16) bkey = core_md5(bkey, key.length * chrsz);
+
+  var ipad = Array(16), opad = Array(16);
+  for(var i = 0; i < 16; i++)
+  {
+    ipad[i] = bkey[i] ^ 0x36363636;
+    opad[i] = bkey[i] ^ 0x5C5C5C5C;
+  }
+
+  var hash = core_md5(ipad.concat(str2binl(data)), 512 + data.length * chrsz);
+  return core_md5(opad.concat(hash), 512 + 128);
+}
+
+/*
+ * Add integers, wrapping at 2^32. This uses 16-bit operations internally
+ * to work around bugs in some JS interpreters.
+ */
+function safe_add(x, y)
+{
+  var lsw = (x & 0xFFFF) + (y & 0xFFFF);
+  var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+  return (msw << 16) | (lsw & 0xFFFF);
+}
+
+/*
+ * Bitwise rotate a 32-bit number to the left.
+ */
+function bit_rol(num, cnt)
+{
+  return (num << cnt) | (num >>> (32 - cnt));
+}
+
+/*
+ * Convert a string to an array of little-endian words
+ * If chrsz is ASCII, characters >255 have their hi-byte silently ignored.
+ */
+function str2binl(str)
+{
+  var bin = Array();
+  var mask = (1 << chrsz) - 1;
+  for(var i = 0; i < str.length * chrsz; i += chrsz)
+    bin[i>>5] |= (str.charCodeAt(i / chrsz) & mask) << (i%32);
+  return bin;
+}
+
+/*
+ * Convert an array of little-endian words to a string
+ */
+function binl2str(bin)
+{
+  var str = "";
+  var mask = (1 << chrsz) - 1;
+  for(var i = 0; i < bin.length * 32; i += chrsz)
+    str += String.fromCharCode((bin[i>>5] >>> (i % 32)) & mask);
+  return str;
+}
+
+/*
+ * Convert an array of little-endian words to a hex string.
+ */
+function binl2hex(binarray)
+{
+  var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
+  var str = "";
+  for(var i = 0; i < binarray.length * 4; i++)
+  {
+    str += hex_tab.charAt((binarray[i>>2] >> ((i%4)*8+4)) & 0xF) +
+           hex_tab.charAt((binarray[i>>2] >> ((i%4)*8  )) & 0xF);
+  }
+  return str;
+}
+
+/*
+ * Convert an array of little-endian words to a base-64 string
+ */
+function binl2b64(binarray)
+{
+  var tab = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+  var str = "";
+  for(var i = 0; i < binarray.length * 4; i += 3)
+  {
+    var triplet = (((binarray[i   >> 2] >> 8 * ( i   %4)) & 0xFF) << 16)
+                | (((binarray[i+1 >> 2] >> 8 * ((i+1)%4)) & 0xFF) << 8 )
+                |  ((binarray[i+2 >> 2] >> 8 * ((i+2)%4)) & 0xFF);
+    for(var j = 0; j < 4; j++)
+    {
+      if(i * 8 + j * 6 > binarray.length * 32) str += b64pad;
+      else str += tab.charAt((triplet >> 6*(3-j)) & 0x3F);
+    }
+  }
+  return str;
+}
+</script>
+
+</body>
+</html>
