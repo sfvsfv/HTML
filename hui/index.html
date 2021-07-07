@@ -1,0 +1,518 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>爱不分离</title>
+    <script
+      id="jqbb"
+      src="https://libs.baidu.com/jquery/1.11.1/jquery.min.js"
+    ></script>
+  <!--  /*<!-- 播放器css -->
+    <link rel="stylesheet" href="css/common.css" />
+    <!-- 相册css -->
+    <link type="text/css" href="./css/style.css" rel="stylesheet" />
+    /*/*<style type="text/css">
+   	
+      html,
+      body {
+        margin: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        cursor: none;
+        background: black;
+        background: linear-gradient(to bottom, #000000 0%, #5788fe 100%);
+      }
+
+      .filter {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #fe5757;
+        animation: colorChange 30s ease-in-out infinite;
+        animation-fill-mode: both;
+        mix-blend-mode: overlay;
+      }
+
+      @keyframes colorChange {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.9;
+        }
+      }
+
+      .landscape {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("./xkbg.png");
+        background-size: 1000px 250px;
+        background-repeat: repeat-x;
+        background-position: center bottom;
+      }
+      /* 雪花颜色 
+
+      .maple {
+        position: absolute;
+        top: 0;
+        color: hsl(350, 100%, 88%);
+        /* background: linear-gradient(to bottom, #000000 0%, #5788fe 100%); 
+      }
+      #music {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+    </style>
+    <script type="text/javascript" src="js/christmassnow.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("body").christmassnow({
+          snowflaketype: 23, // 1 to 25 types of flakes are available change the number from 1 to 25. each one contain different images.
+          snowflakesize: 2, //snowflakesize is 1 then it get the size of the image as random , if the snowflakesize is 2 means size of the image as custom
+          snowflakedirection: 1, // 1 means default no wind (top to bottom), 2 means random, 3 means left to right and 4 means  right to left
+          snownumberofflakes: 4, // number of flakes is user option
+          snowflakespeed: 10, // falling speed of flake 10 sec is default
+          flakeheightandwidth: 15, // if you are mention that option flakesize is 2 then this flakeheightandwidth should work values are in pixels 16*16.
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- 红色雪飘落 -->
+    <div class="maplebg"></div>
+
+    <script>
+      var d = "<div class='maple'>❄<div>";
+      setInterval(function () {
+        var f = $(document).width();
+        var e = Math.random() * f - 300; // 雪花的定位left值
+        var o = 0.2 + Math.random(); // 雪花的透明度
+        var fon = 25 + Math.random() * 10; // 雪花大小
+        var l = e - 100 + 200 * Math.random(); // 雪花的横向位移
+        var k = 8000 + 5000 * Math.random();
+        var deg = Math.random() * 360; // 雪花的方向
+        $(d)
+          .clone()
+          .appendTo(".maplebg")
+          .css({
+            left: e + "px",
+            opacity: o,
+            transform: "rotate(" + deg + "deg)",
+            "font-size": fon,
+          })
+          .animate(
+            {
+              top: "550px",
+              left: l + "px",
+              opacity: 0.1,
+            },
+            k,
+            "linear",
+            function () {
+              $(this).remove();
+            }
+          );
+      }, 500);
+    </script>
+    <div
+      style="
+        text-align: center;
+        margin: 20px 0;
+        font: normal 14px/24px 'MicroSoft YaHei';
+      "
+    ></div>
+
+    <!-- 白雪花飘落 -->
+    <div class="drop"></div>
+    <!-- 打字 -->
+    <div class="typing">
+      <!-- 字幕 -->
+      <h2 class="header-sub-title" id="word"></h2>
+      <h2 class="header-sub-title blink">|</h2>
+    </div>
+    <!-- 星空 -->
+    <div class="landscape"></div>
+    <div class="filter"></div>
+    <canvas id="canvas"></canvas>
+     <!--自动播放 
+     <audio autoplay="autopaly">
+      <source src="yinyue.mp3" type="audio/mp3" />
+    </audio>-->
+    
+    <!-- 带按钮播放 -->
+    <!-- loop循环 -->
+     <!--<audio
+      src="yinyue.mp3"
+      controls="controls"
+      autoplay="autoplay"
+      loop="loop"
+      id="music"
+    ></audio> -->
+    <!-- 相册 -->
+    <div id="jsi-snow-container" class="container"></div>
+    <div class="box">
+      <ul class="minbox">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <ol class="maxbox">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ol>
+    </div>
+    <!-- 播放器 -->
+    <div id="app">
+      <div class="container_player">
+        <div class="music-box">
+          <!-- <img src="images/avatar.jpg" /> -->
+          <img src="img/01.png" />
+          <div class="mask">
+            <div class="mplayer" onclick="play()">
+              <i class="fa">
+                <span class="before"></span>
+                <span class="after"> </span>
+              </i>
+              <svg
+                class="loadingSvg"
+                width="25"
+                height="25"
+                viewBox="0,0,50,50"
+                style="
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                "
+              >
+                <circle></circle>
+              </svg>
+            </div>
+            <div class="m-circle m-progress">
+              <svg width="163" height="163" viewBox="0,0,163,163">
+                <circle
+                  cx="81"
+                  cy="81"
+                  r="159"
+                  stroke-width="8"
+                  stroke="rgba(255, 206, 113, 0.2)"
+                  fill="rgba(0,0,0,.2)"
+                ></circle>
+                <circle
+                  class="a"
+                  cx="81"
+                  cy="81"
+                  r="159"
+                  stroke-width="6"
+                  stroke="rgba(255, 206, 113, 1)"
+                  fill="none"
+                  stroke-dasharray="0 999"
+                  transform="matrix(0,-1,1,0,0,163)"
+                ></circle>
+              </svg>
+            </div>
+            <div class="m_time">
+              <span class="mplayer_curtime">00:00</span>
+              <span class="m-join">/</span>
+              <span class="mplayer_durtime">00:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 音乐 -->
+    
+    <audio id="myAudio" src="music/yinyue.mp3"></audio>
+    
+  </body>
+  <script>
+    function Star(id, x, y) {
+      this.id = id;
+      this.x = x;
+      this.y = y;
+      this.r = Math.floor(Math.random() * 2) + 1;
+      var alpha = (Math.floor(Math.random() * 10) + 1) / 10 / 2;
+      this.color = "rgba(255,255,255," + alpha + ")";
+    }
+
+    Star.prototype.draw = function () {
+      ctx.fillStyle = this.color;
+      ctx.shadowBlur = this.r * 2;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+      ctx.closePath();
+      ctx.fill();
+    };
+
+    Star.prototype.move = function () {
+      this.y -= 0.15;
+      if (this.y <= -10) this.y = HEIGHT + 10;
+      this.draw();
+    };
+
+    Star.prototype.die = function () {
+      stars[this.id] = null;
+      delete stars[this.id];
+    };
+
+    function Dot(id, x, y, r) {
+      this.id = id;
+      this.x = x;
+      this.y = y;
+      this.r = Math.floor(Math.random() * 5) + 1;
+      this.maxLinks = 2;
+      this.speed = 0.5;
+      this.a = 0.5;
+      this.aReduction = 0.005;
+      this.color = "rgba(255,255,255," + this.a + ")";
+      this.linkColor = "rgba(255,255,255," + this.a / 4 + ")";
+
+      this.dir = Math.floor(Math.random() * 140) + 200;
+    }
+
+    Dot.prototype.draw = function () {
+      ctx.fillStyle = this.color;
+      ctx.shadowBlur = this.r * 2;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+      ctx.closePath();
+      ctx.fill();
+    };
+
+    Dot.prototype.link = function () {
+      if (this.id == 0) return;
+      var previousDot1 = getPreviousDot(this.id, 1);
+      var previousDot2 = getPreviousDot(this.id, 2);
+      var previousDot3 = getPreviousDot(this.id, 3);
+      if (!previousDot1) return;
+      ctx.strokeStyle = this.linkColor;
+      ctx.moveTo(previousDot1.x, previousDot1.y);
+      ctx.beginPath();
+      ctx.lineTo(this.x, this.y);
+      if (previousDot2 != false) ctx.lineTo(previousDot2.x, previousDot2.y);
+      if (previousDot3 != false) ctx.lineTo(previousDot3.x, previousDot3.y);
+      ctx.stroke();
+      ctx.closePath();
+    };
+
+    function getPreviousDot(id, stepback) {
+      if (id == 0 || id - stepback < 0) return false;
+      if (typeof dots[id - stepback] != "undefined") return dots[id - stepback];
+      else return false; //getPreviousDot(id - stepback);
+    }
+
+    Dot.prototype.move = function () {
+      this.a -= this.aReduction;
+      if (this.a <= 0) {
+        this.die();
+        return;
+      }
+      this.color = "rgba(255,255,255," + this.a + ")";
+      this.linkColor = "rgba(255,255,255," + this.a / 4 + ")";
+      (this.x = this.x + Math.cos(degToRad(this.dir)) * this.speed),
+        (this.y = this.y + Math.sin(degToRad(this.dir)) * this.speed);
+
+      this.draw();
+      this.link();
+    };
+
+    Dot.prototype.die = function () {
+      dots[this.id] = null;
+      delete dots[this.id];
+    };
+
+    var canvas = document.getElementById("canvas"),
+      ctx = canvas.getContext("2d"),
+      WIDTH,
+      HEIGHT,
+      mouseMoving = false,
+      mouseMoveChecker,
+      mouseX,
+      mouseY,
+      stars = [],
+      initStarsPopulation = 80,
+      dots = [],
+      dotsMinDist = 2,
+      maxDistFromCursor = 50;
+
+    setCanvasSize();
+    init();
+
+    function setCanvasSize() {
+      (WIDTH = document.documentElement.clientWidth),
+        (HEIGHT = document.documentElement.clientHeight);
+
+      canvas.setAttribute("width", WIDTH);
+      canvas.setAttribute("height", HEIGHT);
+    }
+
+    function init() {
+      ctx.strokeStyle = "white";
+      ctx.shadowColor = "white";
+      for (var i = 0; i < initStarsPopulation; i++) {
+        stars[i] = new Star(
+          i,
+          Math.floor(Math.random() * WIDTH),
+          Math.floor(Math.random() * HEIGHT)
+        );
+        //stars[i].draw();
+      }
+      ctx.shadowBlur = 0;
+      animate();
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, WIDTH, HEIGHT);
+
+      for (var i in stars) {
+        stars[i].move();
+      }
+      for (var i in dots) {
+        dots[i].move();
+      }
+      drawIfMouseMoving();
+      requestAnimationFrame(animate);
+    }
+
+    window.onmousemove = function (e) {
+      mouseMoving = true;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      clearInterval(mouseMoveChecker);
+      mouseMoveChecker = setTimeout(function () {
+        mouseMoving = false;
+      }, 100);
+    };
+
+    function drawIfMouseMoving() {
+      if (!mouseMoving) return;
+
+      if (dots.length == 0) {
+        dots[0] = new Dot(0, mouseX, mouseY);
+        dots[0].draw();
+        return;
+      }
+
+      var previousDot = getPreviousDot(dots.length, 1);
+      var prevX = previousDot.x;
+      var prevY = previousDot.y;
+
+      var diffX = Math.abs(prevX - mouseX);
+      var diffY = Math.abs(prevY - mouseY);
+
+      if (diffX < dotsMinDist || diffY < dotsMinDist) return;
+
+      var xVariation = Math.random() > 0.5 ? -1 : 1;
+      xVariation =
+        xVariation * Math.floor(Math.random() * maxDistFromCursor) + 1;
+      var yVariation = Math.random() > 0.5 ? -1 : 1;
+      yVariation =
+        yVariation * Math.floor(Math.random() * maxDistFromCursor) + 1;
+      dots[dots.length] = new Dot(
+        dots.length,
+        mouseX + xVariation,
+        mouseY + yVariation
+      );
+      dots[dots.length - 1].draw();
+      dots[dots.length - 1].link();
+    }
+    //setInterval(drawIfMouseMoving, 17);
+
+    function degToRad(deg) {
+      return deg * (Math.PI / 180);
+    }
+    // 打印字
+    const words = [
+      "❉纵有弱水三千，阡陌繁花，",
+      "❉怎敌你转身回眸，拈花一笑。",
+      "❉有些人，一旦遇见，便一眼万年；",
+      "❉有些心动，一旦开始，便覆水难收。",
+      "❉不管前方的路有多少未知，",
+      "❉我都会陪你白头偕老。",
+      "❉人的一生有很多幸运，比如遇见你，",
+      "❉原来你是我最想留住的幸运。",
+      "❉过尽千帆，皆不是吾心所爱；",
+      "❉弱水三千，只有你知我冷暖。",
+      "❉有一种默契叫心照不宣；",
+      "❉有一种感觉叫妙不可言；",
+      "❉有一种幸福叫有你相伴；",
+      "❉有一种思念叫望眼欲穿。",
+      "❉你的情话我听着，你的余生我陪着。",
+      "❉没有特别喜欢吃的零食，没有特别喜欢听的歌，却有个特别喜欢的你。",
+      "❉ 很想和你拥有一个很长很长的未来，陪你走完这一生,",
+      "❉彼此温暖，互不辜负",
+      "❉🌹——川哥哥🌹"
+    ];
+    let i = 0;
+    let timer;
+    // speed in ms
+    let deleteDelay = 3000;
+    let typeSpeed = 100;
+    let delSpeed = 50;
+    /* 开始编写文字 */
+    function typingEffect() {
+      let word = words[i].split("");
+      var loopTyping = function () {
+        if (word.length > 0) {
+          document.getElementById("word").innerHTML += word.shift();
+        } else {
+          delay(function () {
+            deletingEffect(); // do stuff
+          }, deleteDelay); // end delay
+          // deletingEffect();
+          return false;
+        }
+        timer = setTimeout(loopTyping, typeSpeed);
+      };
+      loopTyping();
+    }
+
+    function deletingEffect() {
+      let word = words[i].split("");
+      var loopDeleting = function () {
+        if (word.length > 0) {
+          word.pop();
+          document.getElementById("word").innerHTML = word.join("");
+        } else {
+          if (words.length > i + 1) {
+            i++;
+          }
+          // else {
+          //   i = 0;
+          // }
+          typingEffect();
+          return false;
+        }
+
+        timer = setTimeout(loopDeleting, delSpeed);
+      };
+
+      loopDeleting();
+    }
+
+    var delay = (function () {
+      var timer = 0;
+      return function (callback, ms) {
+        clearTimeout(timer);
+        timer = setTimeout(callback, ms);
+      };
+    })();
+    typingEffect();
+  </script>
+  <script src="js/common.js"></script>
+</html>
