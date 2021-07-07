@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- 适应wap -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>霸王游戏机</title>
+<!-- css3-mediaqueries.js for IE8 or older -->
+<!--[if lt IE 9]>
+   <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+
+<!-- 框架样式 -->
+<style type="text/css">
+body {
+	    font: 1em/150% Arial, Helvetica, sans-serif;
+}
+a {
+	color: #fff;
+	text-decoration: none;
+}
+h3 { 
+
+	color: #fff;
+}
+a:hover {
+	text-decoration: underline;
+}
+#pagewrap {
+
+	padding: 5px;
+	width: 960px;
+	margin: 20px auto;
+
+}
+
+#header {
+
+	height: 180px;
+
+}
+
+#content {
+
+	width: 600px;
+	float: left;
+
+}
+
+#sidebar {
+
+	width: 300px;
+	float: right;
+
+}
+
+#footer {
+
+	clear: both;
+
+}
+/************************************************************************************
+
+分辨率适应
+
+*************************************************************************************/
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+	#pagewrap {
+
+		width: 94%;
+
+	}
+
+	#content {
+
+		width: 65%;
+
+	}
+
+	#sidebar {
+
+		width: 30%;
+
+	}
+
+ 
+
+}
+/* for 700px or less */
+@media screen and (max-width: 700px) {
+
+ 
+
+	#content {
+
+		width: auto;
+
+		float: none;
+
+	}
+
+	#sidebar {
+
+		width: auto;
+
+		float: none;
+
+	}
+
+ 
+
+}
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+
+ 
+
+	#header {
+
+		height: auto;
+
+	}
+
+
+	#sidebar {
+
+		display: none;
+
+	}
+
+ 
+
+}
+
+</style>
+
+<!-- 按钮样式-->
+<style type="text/css">
+@font-face{font-weight:400;font-style:normal;font-family:fzcthjt;src:url(../fonts/fzcthjt.eot);src:url(../fonts/fzcthjt.eot#iefix) format("embedded-opentype"),url(../fonts/fzcthjt.woff) format("woff"),url(../fonts/fzcthjt.ttf) format("truetype"),url(../fonts/fzcthjt.svg#fzcthjt) format("svg")}body{overflow-x:hidden;background:#f8f8f8}ol,ul{list-style-type:none}a{text-decoration:none}*{margin:0;padding:0}.logo{padding:15px 0;width:100%;height:auto;border-bottom:1px solid #cbb2be}.logo h1{margin:0 auto;color:#abc8c7;font-size:22px;font-family:fzcthjt}.logo h2{margin:0 auto;color:#c3a5b3;font-weight:700;font-style:italic;font-size:15px}.logoh:hover{text-decoration:none}.shaking:hover{-webkit-animation:tada 1s .2s ease both;-moz-animation:tada 1s .2s ease both}@-webkit-keyframes tada{0%{-webkit-transform:scale(1)}10%,20%{-webkit-transform:scale(.9) rotate(-3deg)}30%,50%,70%,90%{-webkit-transform:scale(1.1) rotate(3deg)}40%,60%,80%{-webkit-transform:scale(1.1) rotate(-3deg)}to{-webkit-transform:scale(1) rotate(0)}}.home{margin:0 auto;margin-bottom:30px;padding:0 10px;min-width:300px;color:#fff}.icon-items li{position:relative;float:left;box-sizing:border-box;margin:10px 1% 0 0;width:24%;border-radius:3px;text-align:center;-webkit-transform:scale(0);-webkit-animation-name:janim;-webkit-animation-duration:.3s;-webkit-animation-timing-function:linear;-webkit-animation-iteration-count:1;-webkit-animation-direction:normal;-webkit-animation-fill-mode:forwards}@-webkit-keyframes janim{0%{-webkit-transform:scale(.2)}50%{-webkit-transform:scale(1.2)}to{-webkit-transform:scale(1)}}.icon-items li a{display:block;width:100%;color:#fff;font-size:18px;line-height:70px}.icon-items li a:hover{z-index:1;background-color:rgba(0,0,0,.05);box-shadow:rgba(0,0,0,.3) 0 3px 10px;color:#fff;text-decoration:none;font-size:20px}.icon-items li.icon-r1{background-color:#d6e681;-webkit-animation-delay:.15s}.icon-items li.icon-l1{background-color:#82a7a6;-webkit-animation-delay:.45s}.icon-items li.icon-r2{background-color:#4fb477;-webkit-animation-delay:.6s}.icon-items li.icon-l2{background-color:#c4ad83;-webkit-animation-delay:.75s}.icon-items li.icon-r3{background-color:#2a628f;-webkit-animation-delay:.65s}.icon-items li.icon-l3{background-color:#fa824c;-webkit-animation-delay:.55s}.icon-items li.icon-r4{background-color:#9fd356;-webkit-animation-delay:.3s}.icon-items li.icon-l4{background-color:#43aa8b;-webkit-animation-delay:.5s}.icon-items li.icon-r5{background-color:#e5625e;-webkit-animation-delay:.4s}.icon-items li.icon-l5{background-color:#c49799;-webkit-animation-delay:.35s}.icon-items li.icon-r6{background-color:#7fb7be;-webkit-animation-delay:.25s}.icon-items li.icon-l6{background-color:#69dc9e;-webkit-animation-delay:.1s}.icon-items li.icon-r7{background-color:#a27e6f;-webkit-animation-delay:.2s}.icon-items li.icon-l7{background-color:#7880b5;-webkit-animation-delay:.8s}.icon-items li.icon-r8{background-color:#f28123;-webkit-animation-delay:.7s}.icon-items li.icon-l8{background-color:#d0c88e;-webkit-animation-delay:.45s}.foot-link{padding:5px 0;border-top:1px solid #ef9310;background-color:#fcf8e3;text-align:center}.foot-link a{display:inline-block;width:75pt;color:#a86d3b;text-decoration:none}.foot-link a:hover{color:#747474;text-decoration:none}.copy{position:relative;height:26px;background-color:#5199e5;text-align:center;font-size:9pt;line-height:26px}.copy,.copy a{color:#fff}.copy a:hover{color:#747474;text-decoration:none}.clearfix:after{clear:both;display:block;visibility:hidden;content:''}.clear{clear:both;line-height:normal}.ip{width:300px;height:auto;text-align:left}@media screen and (max-width:900px){.ip{width:100%;height:auto}.icon-items li{width:49%;}}.alert{margin-top:-10px;width:95%}::-webkit-scrollbar-thumb{height:50px;outline:2px solid #f8f8f8;outline-offset:-2px;border:2px solid #f8f8f8;-webkit-border-radius:10px;background-color:#018ee8}::-webkit-scrollbar-thumb:hover{height:50px;-webkit-border-radius:10px;background-color:#fb4446}::-webkit-scrollbar{width:11px;height:18px}::-webkit-scrollbar-track-piece{-webkit-border-radius:0;background-color:#000000}
+</style>
+</head>
+<body style="background-image : url(wep.vipyshy.com/tp/5.jpg);">
+<body background="https://wep.vipyshy.com/tp/5.jpg">
+	<div id="bg"></div>
+<div id="pagewrap">
+	<div id="header">
+	<!-- logo -->
+		<div align="center"></div>
+	    <!-- 炫酷动态文字 -->
+		<div id="chakhsu" style="text-align: center; color: #00BFFF;"></div>    
+<script>var chakhsu = function (r) {    
+        function t() {    
+            return b[Math.floor(Math.random() * b.length)]    
+        }    
+        function e() {    
+            return String.fromCharCode(94 * Math.random() + 33)    
+        }    
+        function n(r) {    
+            for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {    
+                var l = document.createElement("span");    
+                l.textContent = e(), l.style.color = t(), n.appendChild(l)    
+            }    
+            return n    
+        }    
+        function i() {    
+            var t = o[c.skillI];    
+            c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)    
+        }    
+        /*以下内容自定义修改*/    
+        var l = "霸王游戏机",    
+            o = ["本网站由川川学长制作", ].map(function (r) {    
+                return r + ""    
+            }), a = 2, g = 1, s = 5, d = 75,    
+            b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],    
+            c = {text: "", prefixP: -s, skillI: 0, skillP: 0, direction: "forward", delay: a, step: g};    
+        i()    
+    };    
+    chakhsu(document.getElementById('chakhsu'));</script>
+	</div><br /><center><h3>QQ1965607414</h3></center><br /><br /><br />
+
+
+<!-- 按钮 -->
+	<div id="content">
+			<section class="home clearfix">
+				<ul class="icon-items clearfix">
+                <li class="icon-r1"><a href="https://www.yikm.net/play?id=9037&n=L2diYXJvbS9jbjkwMzcuemlw&t=%E7%81%AB%E7%84%B0%E7%BA%B9%E7%AB%A0%20-%20%E7%83%88%E7%81%AB%E4%B9%8B%E5%89%91&ac=5&p=">火焰纹章</a></li>  
+				<li class="icon-r2"><a href="https://www.yikm.net/play?id=4137&n=L2Zjcm9tL3NqL0NvbnRyYSAoVSkgWyFdLm5lcw==&t=%E9%AD%82%E6%96%97%E7%BD%97">魂斗罗</li>
+                <li class="icon-r3"><a href="https://www.yikm.net/play?id=3501&n=L2Zjcm9tL2R6bXgvU3VwZXIgTWFyaW8gQnJvcy4gKFcpIFshXS5uZXM=&t=%E8%B6%85%E7%BA%A7%E9%A9%AC%E9%87%8C%E5%A5%A5">超级玛丽</a></li> 
+                <li class="icon-r4"><a href="https://www.yikm.net/play?id=4511&n=L2Zjcm9tL3h5eC9Tbm93IEJyb3MuIChKKS5uZXM=&t=%E9%9B%AA%E4%BA%BA%E5%85%84%E5%BC%9F">雪人兄弟</a></li>
+                <li class="icon-l5"><a href="https://www.yikm.net/play?id=3325&n=L2Zjcm9tL2R6bXgvTWlnaHR5IEZpbmFsIEZpZ2h0IChVKSBbVCtDaGldLm5lcw==&t=%E5%BF%AB%E6%89%93%E6%97%8B%E9%A3%8E-%E4%B8%AD%E6%96%87">快打旋风</a></li>
+                <li class="icon-l6"><a href="https://www.yikm.net/play?id=3175&n=L2Zjcm9tL2R6bXgvVGFrYWhhc2hpIE1laWppbiBubyBCb3VrZW4gU2hpbWEgKEopIFshXS5uZXM=&t=%E5%86%92%E9%99%A9%E5%B2%9B">冒险岛</a></li>
+                <li class="icon-r7"><a href="https://www.yikm.net/play?id=7735&n=L2diYXJvbS8xNzQzLnppcA==&t=%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4-%E7%BC%A9%E5%B0%8F%E5%B8%BD&ac=5&p=">塞尔达传说</a></li>
+			    <li class="icon-l8"><a href="https://www.yikm.net/play?id=3883&n=L2Zjcm9tL2dkL1RlZW5hZ2UgTXV0YW50IE5pbmphIFR1cnRsZXMgLSBUb3VybmFtZW50IEZpZ2h0ZXJzIChVKSBbIV0ubmVz&t=%E6%BF%80%E9%BE%9F%E5%BF%AB%E6%89%93(%E5%BF%8D%E8%80%85%E7%A5%9E%E9%BE%9F%E6%A0%BC%E6%96%97)%E7%BE%8E%E7%89%88">忍者神龟</a></li>
+				<li class="icon-r7"><a href="https://www.yikm.net/play?id=8859&n=L2diYXJvbS9jbjg4NTkuemlw&t=%E5%8F%A3%E8%A2%8B%E5%A6%96%E6%80%AA%E6%94%B9%E7%89%88%20%E7%81%AB%E7%BA%A22012%E7%BE%8E%E5%8C%96%E7%89%88v1&ac=5&p=">口袋妖怪火红</a></li>
+			    <li class="icon-r1"><a href="https://www.yikm.net/play?id=8930&n=L2diYXJvbS9jbjg5MzAuemlw&t=%E6%81%B6%E9%AD%94%E5%9F%8E%20-%20%E6%99%93%E6%9C%88%E5%9C%86%E8%88%9E%E6%9B%B2[%E4%B9%9D%E6%9F%B3](%E7%AE%80)(JP)&ac=5&p=">恶魔城晓月圆舞曲</a></li>
+                <li class="icon-r2"><a href="https://www.yikm.net/play?id=3201&n=L2Zjcm9tL2R6bXgvRG91YmxlIERyYWdvbiAoVSkgWyFdLm5lcw==&t=%E5%8F%8C%E6%88%AA%E9%BE%99(%E7%BE%8E%E7%89%88)">双截龙</a></li>
+                <li class="icon-r3"><a href="https://www.yikm.net/play?id=4921&n=L2Zjcm9tL3NqL0phY2thbC5uZXM=&t=%E8%B5%A4%E8%89%B2%E8%A6%81%E5%A1%9E&ac=3">赤色要塞</a></li>
+                <li class="icon-r4"><a href="https://www.yikm.net/play?id=4275&n=L2Zjcm9tL3h5eC9CYXR0bGUgQ2l0eSAoSikgWyFdLm5lcw==&t=%E5%9D%A6%E5%85%8B%E5%A4%A7%E6%88%98">坦克大战</a></li>
+                <li class="icon-l5"><a href="https://www.yikm.net/play?id=4141&n=L2Zjcm9tL3NqL0NvbnRyYSBGb3JjZSAoVSkgWyFdLm5lcw==&t=%E9%AD%82%E6%96%97%E7%BD%97%E5%8A%9B%E9%87%8F">超级魂斗罗</a></li>
+                <li class="icon-l6"><a href="https://www.yikm.net/play?id=3203&n=L2Zjcm9tL2R6bXgvRG91YmxlIERyYWdvbiBJSSAtIFRoZSBSZXZlbmdlIChFKSBbIV0ubmVz&t=%E5%8F%8C%E6%88%AA%E9%BE%992-%E5%A4%8D%E4%BB%87(%E6%AC%A7%E7%89%88)">双截龙2</a></li>
+                <li class="icon-r7"><a href="https://www.yikm.net/play?id=3206&n=L2Zjcm9tL2R6bXgvRG91YmxlIERyYWdvbiBJSUkgLSBUaGUgU2FjcmVkIFN0b25lcyAoRSkgWyFdLm5lcw==&t=%E5%8F%8C%E6%88%AA%E9%BE%993-%E7%BD%97%E5%A1%9E%E5%A1%94%E4%B9%8B%E7%9F%B3(%E6%AC%A7%E7%89%88)">双截龙3</a></li>
+                <li class="icon-r8"><a href="https://www.yikm.net/play?id=3299&n=L2Zjcm9tL2R6bXgvVGVlbmFnZSBNdXRhbnQgTmluamEgVHVydGxlcyAyIC0gVGhlIE1hbmhhdHRhbiBQcm9qZWN0IChKKS5uZXM=&t=%E5%BF%8D%E8%80%85%E7%A5%9E%E9%BE%9F3(%E6%97%A5%E7%89%88)&ac=3">忍者神龟3</a></li>
+                <li class="icon-r1"><a href="https://www.yikm.net/play?id=4977&n=L2Zjcm9tL2pzYnl6dy9wYWxfSS5uZXM=&t=%E4%BB%99%E5%89%91%E5%A5%87%E4%BE%A0%E4%BC%A0(%E4%B8%AD%E6%96%87)&ac=3">仙剑奇侠传</a></li>
+                <li class="icon-r2"><a href="https://www.yikm.net/play?id=5334&n=ZGluby56aXA=&t=%E6%81%90%E9%BE%99%E5%BF%AB%E6%89%93&ac=4&l=capcom-cps-1">恐龙快打</a></li>
+                <li class="icon-r3"><a href="https://www.yikm.net/play?id=4518&n=L2Zjcm9tL3h5eC9DaXJjdXMgQ2hhcmxpZSAoSikgWyFdLm5lcw==&t=%E9%A9%AC%E6%88%8F%E5%9B%A2">马戏团</a></li>
+                <li class="icon-r4"><a href="https://www.yikm.net/play?id=6419&n=L2diYXJvbS8wMzQxLnppcA==&t=%E6%98%9F%E9%99%85%E5%A4%A7%E6%88%98%E9%A6%96%E9%83%A8%E6%9B%B2-%E7%BB%9D%E5%9C%B0%E6%AD%A6%E5%A3%AB&ac=5&p=/gbapic/0341.jpg">星球大战绝地武士</a></li>
+                <li class="icon-l5"><a href="https://www.yikm.net/play?id=6167&n=L2diYXJvbS8wMDgzLnppcA==&t=%E5%BF%AB%E6%89%93%E6%97%8B%E9%A3%8EONE&ac=5&p=/gbapic/0083.jpg">快打旋风新版本</a></li>
+                <li class="icon-r1"><a href="https://www.yikm.net/play?id=6428&n=L2diYXJvbS8wMzUwLnppcA==&t=%E8%B6%85%E7%BA%A7%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%A4%A7%E6%88%98A&ac=5&p=/gbapic/0350.png">超级机器人大战</a></li>
+                <li class="icon-r2"><a href="https://www.yikm.net/play?id=5303&n=L2Zjcm9tL2R6bXgvcnpzZzN3ZC5uZXM=&t=%E5%BF%8D%E8%80%85%E7%A5%9E%E9%BE%9F3%E6%97%A0%E9%99%90%E5%91%BD&ac=3">忍者神龟3无限命</a></li>
+                <li class="icon-r3"><a href="https://www.yikm.net/play?id=3583&n=L2Zjcm9tL2R6bXgvRHJhZ29uIEZpZ2h0ZXIgKFUpIFshXS5uZXM=&t=%E9%BE%99%E6%88%98%E5%A3%AB(%E7%BE%8E%E7%89%88)">龙战士</a></li>
+                <li class="icon-r4"><a href="https://www.yikm.net/play?id=5319&n=bXNsdWcuemlw&t=%E5%90%88%E9%87%91%E5%BC%B9%E5%A4%B41%20%E8%B6%85%E7%BA%A7%E5%9D%A6%E5%85%8B-001&ac=4&l=snk-neo-geo">合金弹头1</a></li>
+                <li class="icon-l5"><a href="https://www.yikm.net/play?id=5326&n=a29mOTcuemlw&t=%E6%8B%B3%E7%9A%8797&ac=4&l=snk-neo-geo">拳皇97</a></li>
+                <li class="icon-r1"><a href="https://www.yikm.net/play?id=5342&n=a292LnppcA==&t=%E4%B8%89%E5%9B%BD%E6%88%98%E7%BA%AA1&ac=4&l=PGM">三国战纪1</a></li>
+                <li class="icon-r1"><a href="https://www.yikm.net/play?id=3872&n=L2Zjcm9tL2dkL1lpZSBBciBLdW5nLUZ1IChKKSAoVjEuMikgWyFdLm5lcw==&t=%E5%8A%9F%E5%A4%ABV1.2">功夫小子</a></li>
+                <li class="icon-r2"><a href="https://www.yikm.net/play?id=8125&n=L2diYXJvbS8yMTU3LnppcA==&t=%E6%B5%B7%E8%B4%BC%E7%8E%8B-%E5%B0%91%E5%B9%B4%E8%B7%B3%E8%B7%83&ac=5&p=/gbapic/2157.jpg">海贼王</a></li>
+                <li class="icon-r3"><a href="https://www.yikm.net/play?id=6112&n=L2diYXJvbS8wMDI4LnppcA==&t=%E4%BC%8A%E7%99%BB%E6%88%98%E6%9C%BA&ac=5&p=/gbapic/0028.jpg">伊登3D战机</a></li>
+                <li class="icon-r4"><a href="https://www.yikm.net/play?id=5119&n=L2Zjcm9tL2pzYnl6dy9kaWdpdGFsX2RyYWdvbihDKS5uZXM=&t=%E6%95%B0%E7%A0%81%E6%9A%B4%E9%BE%99%E6%B0%B4%E6%99%B6%E7%89%88(%E4%B8%AD%E6%96%87)&ac=3">数码暴龙机</a></li>
+                <li class="icon-l5"><a href="https://www.yikm.net/play?id=3587&n=L2Zjcm9tL2Z4c2ovMTk0MiAoSlUpIFshXS5uZXM=&t=1942">1942飞机大战</a></li>
+                <li class="icon-l6"><a href="https://www.yikm.net/play?id=3625&n=L2Zjcm9tL2Z4c2ovR3JhZGl1cyAoRSkgWyFdLm5lcw==&t=%E5%AE%87%E5%AE%99%E5%B7%A1%E8%88%AA%E6%9C%BA(%E6%AC%A7%E7%89%88)">宇宙巡航机</a></li>
+                <li class="icon-r7"><a href="https://www.yikm.net/play?id=3721&n=L2Zjcm9tL2Z4c2ovU3VwZXIgU3RhciBGb3JjZSAoSikubmVz&t=%E8%B6%85%E7%BA%A7%E6%98%9F%E9%99%85%E6%88%98%E6%9C%BA">超级星际战机</a></li>
+                <li class="icon-r1"><a href="http://zhanglong.o-v-o.gq/youxi/">下面是我开发的小玩意</a></li>
+                <li class="icon-r2"><a href="http://zhanglong.o-v-o.gq/bird/">压扁滑稽君</a></li>
+                <li class="icon-r3"><a href="http://zhanglong.o-v-o.gq/cat/">喵星人大战旺星人</a></li>
+                <li class="icon-r4"><a href="http://zhanglong.o-v-o.gq/japanese">日语50音图带发音</a></li>
+                <li class="icon-l5"><a href="http://zhanglong.o-v-o.gq/name/">输入名字大乱斗2.0</a></li>
+                <li class="icon-l6"><a href="http://zhanglong.o-v-o.gq/time/">多种时间</a></li>
+                <li class="icon-r7"><a href="http://zhanglong.o-v-o.gq/word/">程序猿背单词</a></li>
+                <li class="icon-r8"><a href="http://zhanglong.o-v-o.gq/yuansu/">炫酷元素周期表</a></li>
+                <li class="icon-r1"><a href="http://zhanglong.o-v-o.gq/zi/">unicode转换工具</a></li>
+                <li class="icon-r2"><a href="http://zhanglong.o-v-o.gq/3dword/">文字特效生成</a></li>
+                <li class="icon-r3"><a href="http://zhanglong.o-v-o.gq/cuimian/">催眠时钟</a></li>
+                <li class="icon-r4"><a href="https://www.yikm.net/musicline/play-music-line.html">音乐线2</a></li>
+                <li class="icon-l5"><a href="http://zhanglong.o-v-o.gq/guo/">过儿小游戏</a></li>
+                <li class="icon-l6"><a href="http://zhanglong.o-v-o.gq/shuxue/">数学函数图像</a></li>
+                <li class="icon-r1"><a href="http://zhanglong.o-v-o.gq/love/">100种爱</a></li>
+                <li class="icon-r2"><a href="http://zhanglong.o-v-o.gq/zhuye/">制作者信息</a></li>
+				</ul>
+			</section>
+	</div>
+
+<!-- 页脚 -->
+	<div id="footer">
+
+<!-- 制作者川川学长-->
+
+	</div>
+</div>
+</body>
+</html>
+<!-- 完结。。。 -->
