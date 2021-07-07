@@ -1,0 +1,156 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+table,
+td,
+img,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: "宋体";
+    font-size: 14px;
+    background: url(../images/body.gif) repeat-x;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+img {
+    border: 0;
+}
+
+.banner,
+.content {
+    width: 1584px;
+    height: 351px;
+    margin: auto;
+}
+
+.content {
+    height: 724px;
+    background: url(../images/content.png) no-repeat;
+    position: absolute;
+    top: 325px;
+}
+
+.content_nav {
+    width: 960px;
+    height: 80px;
+    margin: auto;
+}
+
+.content_nav a {
+    line-height: 80px;
+    padding-left: 25px;
+    padding-right: 50px;
+    font-weight: bold;
+}
+
+.content_nav a:hover,
+.now_nav {
+    color: #429cd1;
+}
+
+.content_qb,
+.content_mh,
+.content_foot,
+.content_mh1 {
+    width: 960px;
+    margin: auto;
+}
+
+.content_qb img {
+    width: 259px;
+    height: 271px;
+    float: left;
+    margin: 40px 25px 0px 40px;
+}
+
+.content_qb p {
+    width: 600px;
+    float: left;
+    text-indent: 2em;
+    line-height: 24px;
+    color: #b8b3b3;
+    margin-top: 60px;
+}
+
+.content_mh {
+    clear: both;
+}
+
+.content_mh h1 {
+    margin: 0px 0px 20px 40px;
+    padding-top: 60px;
+}
+
+.content_mh a,
+.content_mh1 a {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.content_foot {
+    margin-top: 55px;
+}
+
+.content_foot p {
+    text-align: center;
+    height: 24px;
+    color: #b8b3b3;
+    font-size: 12px;
+}
+
+.content1 {
+    background: url(../images/content1.png) no-repeat;
+}
+
+.content_mh1 a {
+    margin-top: 63px;
+}
+
+.content_mh1 a img {
+    width: 157px;
+    height: 108px;
+}
+
+.content_mh1 p {
+    line-height: 24px;
+    color: #b8b3b3;
+    padding-left: 50px;
+}
+
+.content_mh1 h1 {
+    font-size: 14px;
+    color: #fff;
+    padding-left: 50px;
+}
