@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <style type="text/css">
+            canvas{
+                background-color: aqua;
+                margin: 30px auto;
+                display: block;
+            }
+        </style>
+	</head>
+	<body>
+        <canvas id="mycanvas" width="560" height="560"></canvas>
+	</body>
+    <script type="text/javascript">
+        var mycanvas = document.getElementById("mycanvas");
+        var ctx = mycanvas.getContext("2d");
+        
+        //绘制棋盘
+        for (var i = 1;i < 16;i++) {
+            //横线
+            ctx.moveTo(35,35*i);
+            ctx.lineTo(525,35*i);
+            //竖线
+            ctx.moveTo(35*i,35);
+            ctx.lineTo(35*i,525);
+            
+        }
+        ctx.stroke();
+        
+        //单击落子
+        //区分黑白棋子
+        var isBlack = true;
+        mycanvas.onclick = function(ev){//ev：事件对象
+            //鼠标点击时的位置坐标
+            console.log(ev.offsetX,ev.offsetY);
+            var x = ev.offsetX;
+            var y = ev.offsetY;
+            //计算棋子的中心点位置坐标
+            var x0 = Math.round(x/35) * 35;
+            var y0 = Math.round(y/35) * 35;;
+            
+            //边界处理
+            if (x0 == 0) {
+                x0 = 35;
+            }
+            if (y0 == 0) {
+                y0 = 35;
+            }
+            if (x0 == 560) {
+                x0 = 525;
+            }
+            if (y0 == 560) {
+                y0 = 525;
+            }
+            ctx.beginPath();
+            ctx.arc(x0,y0,15,0,2*Math.PI);
+            // ctx.rect(x0,y0,180,180);
+            ctx.closePath();
+            //创建渐变对象
+            //线性渐变
+            // var grd = ctx.createLinearGradient(x0,y0,x0,y0+80);
+            //放射性渐变
+            var grd = ctx.createRadialGradient(x0-2,y0-2,13,x0-2,y0-2,0)
+            
+            //区分黑白棋子
+            if(isBlack){
+                // ctx.fillStyle = "black";
+                // grd.addColorStop(0,"red");
+                // grd.addColorStop(0.3,"blue");
+                // grd.addColorStop(1,"green");
+                grd.addColorStop(0,"#000");
+                grd.addColorStop(1,"#888");
+            }
+            else{
+                // ctx.fillStyle = "white";
+                grd.addColorStop(0,"#d1d1d1");
+                grd.addColorStop(1,"#f9f9f9");
+            }
+            ctx.fillStyle = grd;
+            ctx.fill();
+            isBlack = !isBlack;
+        }
+    </script>
+</html>

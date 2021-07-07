@@ -1,0 +1,492 @@
+
+/*下方这句不动它，翻译开始*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/*翻译
+主页整体样式 
+文本对齐︰ 中心;
+背景色︰ #ffffff  使用夜间默认时修改为#000000即可
+}
+*/
+
+body {
+    text-align: center;
+    background-color: #ffffff;
+}
+
+/*翻译
+logo图标样式 
+宽度︰ 192px;
+高度︰ 108px;
+最大宽度︰ 250px;
+动画︰ flipInX 4s;
+-webkit 动画︰ flipInX 4s
+}
+
+
+img.smaller {
+    width: 192px;
+    height: 108px;
+    max-width: 250px;
+    animation: flipInX 4s;
+    -webkit-animation: flipInX 4s
+}*/
+
+
+
+/*翻译
+logo添加文字样式 
+字体大小︰ 2em;
+白色空间︰ 正常;
+自动换行︰ 断词;
+文本修饰︰ 无;
+颜色: #232323
+}*/
+/*
+.logo {
+    font-size: 2em;
+    white-space: normal;
+    word-wrap: break-word;
+    text-decoration: none;
+    color: #232323
+}*/
+
+/*翻译
+搜索栏字体样式 
+宽度︰ 90%;
+高度︰ 40px;
+背景颜色︰ 透明;
+边境︰ 无;
+大纲︰ 0;
+字体大小︰ 18px;
+字体颜色: #000000;
+填充︰ 0 20px;
+边界半径︰ 50px
+}*/
+
+#search_input {
+    width: 90%;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    outline: 0;
+    font-size: 18px;
+    color: #000000;
+    padding: 0 20px;
+    border-radius: 50px
+}
+
+/*翻译
+搜索框边距 
+下边距︰ 30px;
+上边距︰ 20px;
+*/
+
+.search_part {
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+/*翻译
+跨度样式
+显示︰ 阻止;
+溢出︰ 隐藏;
+左填充︰ 5px;
+垂直对齐︰ 居中;
+*/
+
+span {
+    display: block;
+    overflow: hidden;
+    padding-left: 5px;
+    vertical-align: middle;
+}
+
+/*翻译
+搜索栏框架样式 {
+框阴影︰ 0 0 18px rgba(70,70,40,.255);括号里的颜色为Rgb默认，可进入http://rgb.phpddt.com/查询
+-webkit 动画︰ fadeIn 2.5;
+动画︰ fadeIn 2.5;
+背景色︰ rgba(255,255,255,.100);
+边界半径︰ 50px;
+显示︰ 表;
+垂直对齐︰ 居中;
+宽度︰ 80%;根据你喜欢的宽度调整，目前我为了对齐图标使用80%
+高度︰ 40px;
+最大宽度︰ 400px;
+边距︰ 10px 默认布局;
+}
+*/
+
+.search_bar {
+    box-shadow: 0 0 18px rgba(70,70,40,.255);
+    -webkit-animation: fadeIn 2.5s;
+    animation: fadeIn 2.5s;
+    background-color: rgba(255,255,255,.100);
+    border-radius: 50px;
+    display: table;
+    vertical-align: middle;
+    width: 80%;
+    height: 40px;
+    max-width: 400px;
+    margin: 10px auto;
+}
+
+/*翻译
+搜索栏搜索目标确认图标样式，目前为米奇
+轮廓边框︰ 0;
+高度︰ 40px;
+浮标位置︰ 右;
+颜色: #000;
+字体大小︰ 16px;
+字体粗细︰ 700;
+边境︰ 无;
+背景颜色︰ 透明;
+填充︰ 0 13px 0 13px
+*/
+
+#search_submit {
+    outline: 0;
+    height: 40px;
+    float: right;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    background-color: transparent;
+    padding: 0 13px 0 13px
+}
+
+/*翻译
+书签图标排版目录样式 
+宽度︰ 100%;
+文本对齐︰ 中心;
+填充顶部︰ 15px;
+填充底部︰ 15px;
+*/
+
+#content {
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/*翻译
+书签框架样式
+-webkit 动画︰ fadeInDown 1s;
+动画︰ fadeInDown 1s;
+位置︰ 相对应;
+显示︰ 显示在内部;
+宽度︰ 75px;
+边境︰ 0;
+*/
+
+.box {
+    -webkit-animation: fadeInDown 1s;
+    animation: fadeInDown 1s;
+    position: relative;
+    display: inline-block;
+    width: 75px;
+    border: 0;
+}
+
+
+/*翻译
+书签图标样式
+宽度︰ 100%;
+高度︰ 100%;
+位置︰ 不受限制;
+左︰ 0;
+顶︰ 0;
+*/
+
+.box a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/*翻译
+书签字体样式
+颜色: #232323;使用夜间模式时修改为#eee或者#f2eada即可
+高度︰ 1.5em;
+线的高度︰ 1.5em;
+宽度︰ 72px;
+字体大小︰ 0.75em;
+白色空间︰ nowrap;
+溢出︰ 隐藏;
+边距︰ 默认布局;
+-webkit 边框顶部右半径︰ 5px;
+-webkit 边框底部右半径︰ 5px;
+文本溢出︰ 省略;
+-o 文本溢出︰ 省略;
+气相色谱-质谱-文本-溢出︰ 省略;
+填充顶部︰ 3px;
+填充底部︰ 8px;
+*/
+
+.url {
+    color: red;
+    height: 1.5em;
+    line-height: 1.5em;
+    width: 72px;
+    font-size: 0.75em;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: auto;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    padding-top: 3px;
+    padding-bottom: 8px;
+}
+
+/*翻译
+字体样式 
+宽度︰ 3em;
+高度︰ 3em;
+最大宽度︰ 72px;
+*/
+
+.icon {
+    width: 3em;
+    height: 3em;
+    max-width: 72px;
+}
+
+/*
+下方为动画样式，不懂的不要修改
+*/
+
+@-webkit-keyframes flipInX {
+    0% {
+        -webkit-transform: perspective(400px) rotateX(90deg);
+        transform: perspective(400px) rotateX(90deg);
+        opacity: 0
+    }
+
+    40% {
+        -webkit-transform: perspective(400px) rotateX(-10deg);
+        transform: perspective(400px) rotateX(-10deg)
+    }
+
+    70% {
+        -webkit-transform: perspective(400px) rotateX(10deg);
+        transform: perspective(400px) rotateX(10deg)
+    }
+
+    100% {
+        -webkit-transform: perspective(400px) rotateX(0);
+        transform: perspective(400px) rotateX(0);
+        opacity: 1
+    }
+}
+
+@keyframes flipInX {
+    0% {
+        -webkit-transform: perspective(400px) rotateX(90deg);
+        -ms-transform: perspective(400px) rotateX(90deg);
+        transform: perspective(400px) rotateX(90deg);
+        opacity: 0
+    }
+
+    40% {
+        -webkit-transform: perspective(400px) rotateX(-10deg);
+        -ms-transform: perspective(400px) rotateX(-10deg);
+        transform: perspective(400px) rotateX(-10deg)
+    }
+
+    70% {
+        -webkit-transform: perspective(400px) rotateX(10deg);
+        -ms-transform: perspective(400px) rotateX(10deg);
+        transform: perspective(400px) rotateX(10deg)
+    }
+
+    100% {
+        -webkit-transform: perspective(400px) rotateX(0);
+        -ms-transform: perspective(400px) rotateX(0);
+        transform: perspective(400px) rotateX(0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        transform: translateY(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+
+button {
+  margin: 30px 20px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 2px solid;
+  font: 16px 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  font-family:微软雅黑;
+}
+
+.dd-1 {  /*底部友情链接*/
+  color: #A3F7BF;
+  border-color: #A3F7BF;
+  background: -webkit-linear-gradient(left, #a3f7bf, #a3f7bf) no-repeat;
+  background: linear-gradient(to right, #a3f7bf, #a3f7bf) no-repeat;
+  background-size: 0% 100%;
+}
+.dd-1:hover { /*鼠标经过触发效果*/
+  background-size: 100% 100%;
+  color: #27323A;
+}
+
+
+.dd-2 {
+  color: #E4F68F;
+  border-color: #E4F68F;
+  background: -webkit-linear-gradient(left, #e4f68f, #e4f68f) no-repeat;
+  background: linear-gradient(to right, #e4f68f, #e4f68f) no-repeat;
+  background-size: 100% 0%;
+}
+.dd-2:hover {
+  background-size: 100% 100%;
+  color: #27323A;
+}
+
+.dd-3 {
+  color: #FFD460;
+  border-color: #FFD460;
+  position: relative;
+  overflow: hidden;
+}
+.dd-3:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 0;
+  height: 100%;
+  background-color: #FFD460;
+  z-index: -1;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+
+a{
+    color:#FFFFFF;text-decoration: none;
+}
+
+body{
+    margin: 0;
+
+    background:url(https://yun.btvda.cn/data/f_27028209.png)no-repeat center center fixed;
+}
+
+.logo {
+    width:100px;
+    height:100px;
+    margin:30px auto 0px;
+    border-radius:200px;
+    border:5px solid #fff;
+    box-shadow:5px 5px 5px rgba(0,0,0,0.2);
+    transition:1s all;
+}
+
+.logo img {
+    width:100px;
+    height:100px;
+    margin:0px auto 0px;
+    background:#fff;
+    border-radius:200px;
+}
+
+.logo:hover {
+    transform:rotate(360deg);
+    box-shadow:0px 0px 0px rgba(0,0,0,0.2);
+}
+
+.dd-4 {
+  color: red;
+ 
+}
+.dd-4:hover {
+  background-size: 100% 100%;
+  color: #27323A;
+}
+
+
+.dd-5 {
+  color: aqua;
+ 
+}
+.dd-5:hover {
+  background-size: 100% 100%;
+  color: #FF0000;
+}
+
+.dd-6 {
+  color: chartreuse;
+ 
+}
+.dd-6:hover {
+  background-size: 100% 100%;
+  color: olivedrab;
+}

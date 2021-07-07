@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <style type="text/css">
+            #box{
+               width: 400px;
+               height: 400px;
+               border: 1px solid black;
+               margin: 100px auto;
+               position: relative;
+            }
+            #glass{
+                width: 50px;
+                height: 50px;
+                background-color: green;
+                left: 100px;
+                top: 50px;
+                position: absolute;
+                display: none;
+            }
+        </style>
+	</head>
+	<body>
+        <div id="box">
+            <div id="glass">
+                
+            </div>
+        </div>
+	</body>
+    <script type="text/javascript">
+        var box = document.querySelector('#box');
+        var glass = document.querySelector('#glass');
+        // box.onclick = function(e){
+        box.onmousemove = function(e){
+            var x = e.pageX - box.offsetLeft;
+            var y = e.pageY - box.offsetTop;
+            
+            x -= parseInt(getComputedStyle(glass).width)/2
+            y -= parseInt(getComputedStyle(glass).height)/2
+            //越界处理
+            //左越界处理
+            if (x < 0) {
+                x = 0;
+            }
+            //上越界处理
+            if (y < 0) {
+                y = 0;
+            }
+            //右越界处理
+            var maxLeft = parseInt(getComputedStyle(this).width) - parseInt(getComputedStyle(glass).width)
+            if (x > maxLeft ) {
+                x = maxLeft;
+            }
+            //下越界处理
+            var maxHeight = parseInt(getComputedStyle(this).height) - parseInt(getComputedStyle(glass).height)
+            if (y > maxHeight ) {
+                y = maxHeight;
+            }
+            console.log(x,y);
+            glass.style.left = x + "px";
+            glass.style.top = y + "px"; 
+        }
+        box.onmouseover = function(){
+            glass.style.display = "block"
+        }
+        box.onmouseout = function(){
+            glass.style.display = "none"
+        }
+    </script>
+</html>

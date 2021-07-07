@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <style type="text/css">
+            canvas{
+                background-color: aqua;
+                margin: 30px auto;
+                display: block;
+            }
+        </style>
+	</head>
+	<body>
+        <canvas id="mycanvas" width="560" height="560"></canvas>
+	</body>
+    <script type="text/javascript">
+        var mycanvas = document.getElementById("mycanvas");
+        var ctx = mycanvas.getContext("2d");
+        
+        for (var i = 1;i < 16;i++) {
+            ctx.moveTo(35,35*i);
+            ctx.lineTo(525,35*i);
+            
+            ctx.moveTo(35*i,35);
+            ctx.lineTo(35*i,525);
+            
+        }
+        ctx.stroke();
+    </script>
+</html>

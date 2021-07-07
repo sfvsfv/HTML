@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <style type="text/css">
+            canvas{
+                background-color: aqua;
+                margin: 30px auto;
+                display: block;
+            }
+        </style>
+	</head>
+	<body>
+        <button type="button" onclick="restart()">重新开始</button>
+        <canvas id="mycanvas" width="560" height="560"></canvas>
+	</body>
+    <script type="text/javascript">
+        //重新开始
+        function restart(){
+            window.location.reload();//刷新
+        }
+        var mycanvas = document.getElementById("mycanvas");
+        var ctx = mycanvas.getContext("2d");
+        
+        //绘制棋盘
+        for (var i = 1;i < 16;i++) {
+            //横线
+            ctx.moveTo(35,35*i);
+            ctx.lineTo(525,35*i);
+            //竖线
+            ctx.moveTo(35*i,35);
+            ctx.lineTo(35*i,525);
+            
+        }
+        ctx.stroke();
+        
+        //单击落子
+        //区分黑白棋子
+        var isBlack = true;
+        //重复落子处理
+        var arr = [];//使用二维数组表示棋盘中的每个棋子位置及黑白双方
+        for (var i = 1;i <= 15;i++) {
+           var  tempArr = new Array(15).fill(0);
+           arr.push(tempArr);
+        }
+        console.log(arr);
+        mycanvas.onclick = function(ev){//ev：事件对象
+            //鼠标点击时的位置坐标
+            console.log(ev.offsetX,ev.offsetY);
+            var x = ev.offsetX;
+            var y = ev.offsetY;
+            //计算棋子的中心点位置坐标
+            var x0 = Math.round(x/35) * 35;
+            var y0 = Math.round(y/35) * 35;;
+            var m = y0/35 - 1
+            var n = x0/35 - 1
+            if (arr[m][n] != 0 ) {
+                alert("此处有棋子，不能落子！！");
+                return;
+            }
+            //边界处理
+            if (x0 == 0) {
+                x0 = 35;
+            }
+            if (y0 == 0) {
+                y0 = 35;
+            }
+            if (x0 == 560) {
+                x0 = 525;
+            }
+            if (y0 == 560) {
+                y0 = 525;
+            }
+            ctx.beginPath();
+            ctx.arc(x0,y0,15,0,2*Math.PI);
+            // ctx.rect(x0,y0,180,180);
+            ctx.closePath();
+            //创建渐变对象
+            //线性渐变
+            // var grd = ctx.createLinearGradient(x0,y0,x0,y0+80);
+            //放射性渐变
+            var grd = ctx.createRadialGradient(x0-2,y0-2,13,x0-2,y0-2,0)
+            
+            //区分黑白棋子
+            if(isBlack){
+                // ctx.fillStyle = "black";
+                // grd.addColorStop(0,"red");
+                // grd.addColorStop(0.3,"blue");
+                // grd.addColorStop(1,"green");
+                grd.addColorStop(0,"#000");
+                grd.addColorStop(1,"#888");
+                arr[m][n] = 1
+            }
+            else{
+                // ctx.fillStyle = "white";
+                grd.addColorStop(0,"#d1d1d1");
+                grd.addColorStop(1,"#f9f9f9");
+                arr[m][n] = 2
+            }
+            console.log(arr);
+            ctx.fillStyle = grd;
+            ctx.fill();
+            setTimeout(function(){
+                gameover(m,n);
+                isBlack = !isBlack;
+            },20)
+        }
+        function gameover(m,n){
+            //在四个方向上分别判断是否有五子相连情况
+            if(row(m,n) || col(m,n) || xy(m,n) || yx(m,n)){
+                alert(isBlack?"黑方胜":"白方胜");
+                mycanvas.onclick = null;
+            }
+        }
+        //判断水平方向上是否有五子相连情况
+        function row(m,n){
+            var count = 1;
+            //统计当前落子位置的左边连续相同棋子个数
+            for (var i = n - 1; i >= 0;i--) {
+                if (arr[m][i] == arr[m][n]) {
+                    count++
+                }
+                else{
+                    break;
+                }
+            }
+            //统计当前落子位置的右边连续相同棋子个数
+            for (var i = n + 1; i < 15;i++) {
+                if (arr[m][i] == arr[m][n]) {
+                    count++
+                }
+                else{
+                    break;
+                }
+            }
+            console.log(count);
+            if (count >= 5) {
+                return true;
+            }
+            return false;
+        }
+        //判断垂直方向上是否有五子相连情况
+        function col(m,n){
+            var count = 1;
+            //统计当前落子位置的上边连续相同棋子个数
+            for (var i = m - 1; i >= 0;i--) {
+                if (arr[i][n] == arr[m][n]) {
+                    count++
+                }
+                else{
+                    break;
+                }
+            }
+            //统计当前落子位置的下边连续相同棋子个数
+            for (var i = m + 1; i < 15;i++) {
+                if (arr[i][n] == arr[m][n]) {
+                    count++
+                }
+                else{
+                    break;
+                }
+            }
+            console.log(count);
+            if (count >= 5) {
+                return true;
+            }
+            return false;
+        }
+        //判断正斜方向(/)上是否有五子相连情况
+        function xy(m,n){
+           var count = 1;
+           //统计当前落子位置的右上方连续相同棋子个数
+           for (var m0 = m-1,n0 = n+1; m0 >= 0 && n0 < 15 ;m0--,n0++) {
+               if (arr[m0][n0] == arr[m][n]) {
+                   count++;
+               }
+               else{
+                   break;
+               }
+           }
+           //统计当前落子位置的左下方连续相同棋子个数
+           for (var m0 = m+1,n0 = n-1; m0 < 15 && n0 >= 0 ;m0++,n0--) {
+               if (arr[m0][n0] == arr[m][n]) {
+                   count++;
+               }
+               else{
+                   break;
+               }
+           }
+           if (count >= 5) {
+               return true;
+           }
+           return false;
+        }
+        //判断反斜方向(\)上是否有五子相连情况
+        function yx(m,n){
+            
+        }
+    </script>
+</html>
+
+<!-- 
+ 补充完整：
+    判断反斜方向上是否有五子相连情况
+ -->

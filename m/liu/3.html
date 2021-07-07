@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style type="text/css">
+            .box {
+                width: 90%;
+            }
+
+            #list {
+                width: 100%;
+                list-style: none;
+                position: relative;
+            }
+
+            #list li {
+                border: 1px solid blue;
+                padding: 1%;
+                margin: 2%;
+                width: 26%;
+                /* float: left; */
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            #list li img {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <ul id="list">
+
+            </ul>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var ul = document.getElementById("list");
+        for (var i = 1; i <= 20; i++) {
+            var imgSrc = "img/" + (i < 10 ? ("0" + i) : i) + ".jpg";
+            var li = "<li><img src=" + imgSrc + " /></li>";
+            ul.innerHTML += li;
+        }
+
+        setTimeout(function() {
+            var liArr = ul.getElementsByTagName("li");
+            console.log(liArr);
+
+            // var liWidth = liArr[0].style.width;//这种方式只能获取行间样式值
+            var liWidth = getComputedStyle(liArr[0]).width;
+            var liPadding = getComputedStyle(liArr[0]).paddingLeft;
+            var liMargin = getComputedStyle(liArr[0]).marginLeft;
+            console.log(liWidth);
+            console.log(typeof liWidth);
+            liWidth = parseInt(liWidth) + parseInt(liPadding) * 2 + parseInt(liMargin) * 2;
+
+            var heightArr = []; //存放三列的高度
+            for (var i = 0; i < liArr.length; i++) {
+                var li = liArr[i];
+                if (i < 3) { //前3张图
+                    //list.style.left = "300px"
+
+                    // li.style.left = "列宽px"*0;//i=0
+                    // li.style.left = "列宽px"*1;//i=1
+                    // li.style.left = "列宽px"*2;//i=2
+                    //以上代码合成下面一行
+                    // li.style.left = "列宽px"*i;//i=2
+                    //设置left值
+                    li.style.left = liWidth * i + "px";
+                    li.style.top = 0;
+                    //获取当前li的高度
+                    var liHeight = getComputedStyle(li).height;
+                    liHeight = parseInt(liHeight) + parseInt(liPadding) * 2 + parseInt(liMargin) * 2;
+                    //当前高度存入对应数组中
+                    heightArr[i] = liHeight;
+
+                } else { //其它图;i=3,4,5,6,7,8,9,10,11......
+                    var col = i % 3;
+                    console.log(col);
+                    li.style.left = liWidth * col + "px";
+                    li.style.top = heightArr[col] + "px";
+                    //获取当前li的高度
+                    var liHeight = getComputedStyle(li).height;
+                    liHeight = parseInt(liHeight) + parseInt(liPadding) * 2 + parseInt(liMargin) * 2;
+                    
+                    heightArr[col] += liHeight;
+                }
+            }
+        }, 500)
+    </script>
+</html>

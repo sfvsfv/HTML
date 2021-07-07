@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <style type="text/css">
+            #app{
+                width: 600px;
+                border: 1px solid black;
+                margin: 100px auto;
+            }
+            #titleBox{
+                width: 100%;
+                height: 60px;
+                line-height: 60px;
+                background-color: skyblue;
+            }
+            #leftspan{
+                float: left;
+                font-size: 30px;
+                cursor: pointer;
+            }
+            #rightspan{
+                float: right;
+                font-size: 30px;
+                cursor: pointer;
+            }
+            #title{
+                text-align: center;
+                font-size: 40px;
+            }
+            table{
+                width: 100%;
+                border: 1px solid darkgray;
+            }
+            tr{
+                height: 30px;
+            }
+            td,th{
+                text-align: center;
+                border: 1px solid #666;
+            }
+        </style>
+	</head>
+	<body>
+        <div id="app">
+            <div id="titleBox">
+                <span id="leftspan">上一个月</span>
+                <span id="rightspan">下一个月</span>
+                <div id="title">XXXX年XX月</div>
+            </div>
+            <table  cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                       <th style="color: red;">周日</th> 
+                       <th>周一</th> 
+                       <th>周二</th> 
+                       <th>周三</th> 
+                       <th>周四</th> 
+                       <th>周五</th> 
+                       <th>周六</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+	</body>
+    <script type="text/javascript">
+        var leftspan = document.getElementById("leftspan");
+        var rightspan = document.getElementById("rightspan");
+        var titleDiv = document.getElementById("title")
+        
+        var mydate = new Date();
+        console.log(mydate);
+        showDate();
+        function showDate(){
+            var year = mydate.getFullYear();//2021
+            var month = mydate.getMonth();//用0~11表示1~12
+            titleDiv.innerText = year + "年" + (month+1) + "月";
+            //确定每个月的日历
+            //先确定每个月的1号是星期几
+            mydate = new Date(year,month,1);
+            var week = mydate.getDay();
+            console.log(week);//用0~6表示周日、周一到周六
+            //再确定每个月有多少天
+            mydate = new Date(year,month+1,0);//0号日期
+            console.log(mydate);
+            var days = mydate.getDate();
+            console.log(days);
+            //把日期填写到相应的td中
+            //获取所有的td
+            var tds = document.querySelectorAll("tbody td");
+            console.log(tds);
+            // tds[week+0].innerText = 1;
+            // tds[week+1].innerText = 1+1;
+            // tds[week+2].innerText = 1+2;
+            // tds[week+3].innerText = 1+3;  //.....=== days结束
+            //先清除td中所有内容
+            for (var i = 0;i < tds.length; i++) {
+                tds[i].innerText = "";
+            }
+            //再填写日期
+            for (var i = 1;i <= days; i++) {
+                tds[week+(i-1)].innerText = i;
+            }
+            //处理空行
+            if (tds[28].innerText == "") {//两行为空
+                tds[28].parentNode.style.display = "none"
+                tds[35].parentNode.style.display = "none"
+            }
+            else if (tds[35].innerText == "") {//一行为空
+                tds[35].parentNode.style.display = "none"
+            }
+            else{//显示两行
+                tds[28].parentNode.style.display = "table-row"
+                tds[35].parentNode.style.display = "table-row"
+            }
+        }
+        
+        //上一个月
+        leftspan.onclick = function(){
+            // console.log(1);
+            var year = mydate.getFullYear();//2021
+            var month = mydate.getMonth();//用0~11表示1~12
+            month--;
+            mydate = new Date(year,month);
+            showDate();
+        }
+        //下一个月
+        rightspan.onclick = function(){
+            console.log(2);
+            var year = mydate.getFullYear();//2021
+            var month = mydate.getMonth();//用0~11表示1~12
+            month++;
+            mydate = new Date(year,month);
+            showDate();
+        }
+    </script>
+    
+</html>
+<!-- 
+    增加功能：
+    1、添加上一年和下一年功能
+    2、在空的td中填写上一个月的最后几天和下一个月的最初几天，灰色显示。
+ -->

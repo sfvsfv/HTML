@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <style type="text/css">
+            body{
+                perspective: 1000px;
+            }
+            #box{
+                width: 114px;
+                height: 125px;
+                margin: 200px auto;
+                position: relative;
+                transform-style: preserve-3d;
+                
+             /* 关键帧动画  关键帧动画名 持续时间  匀速运动 无限运动*/
+            }
+            .myratote{
+                animation: myrotate 5s linear infinite;
+            }
+            @keyframes myrotate{
+                from{transform: rotateY(0);}
+                to{transform: rotateY(360deg);}
+            }
+            .item{
+                width: 90px;
+                /* height: 125px; */
+                position: absolute;
+                border: 2px solid blue;
+            }
+            .item img{
+                width: 100%;
+                /* opacity: 0.4; */
+            }
+            
+        </style>
+	</head>
+	<body>
+        <div id="box" class="myratote">
+            
+        </div>
+	</body>
+    <script type="text/javascript">
+        var box = document.getElementById("box");
+        var imgArr = ['baby.png'];
+        //基本布局
+        for (var i = 1;i <= 20;i++) {
+            var div = `<div class='${"item item"+i}'><img src=${imgArr[0]}></div>`
+            box.innerHTML += div;
+        }
+        //对每一张图片位移和旋转
+        for (var i = 1;i <= 20;i++) {
+           var el = document.getElementsByClassName('item'+i)[0];
+           el.style.transform = `rotateY(${(i-1)*18}deg) translateZ(400px)`;
+        }
+        
+        //增加功能：鼠标放上动画停止（停止到静止状态），鼠标移开动画继续
+        box.onmouseover = function(){
+            this.className = ""
+        }
+        box.onmouseout = function(){
+           this.className = "myratote"
+        }
+        
+        //修改功能：鼠标放上动画停止（停止到当前位置），鼠标移开动画继续
+    </script>
+</html>

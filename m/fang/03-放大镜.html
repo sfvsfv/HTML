@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <style type="text/css">
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            .box{
+                width: 800px;
+                margin: 50px auto;
+            }
+            .left{
+                width: 250px;
+                height: 250px;
+                border: 1px solid black;
+                float: left;
+                margin-right:30px ;
+                position: relative;
+            }
+            .left img{
+                width: 100%;
+            }
+            .right{
+                
+                width: 500px;
+                height: 500px;
+                border: 1px solid black;
+                overflow: hidden;
+                float: left;
+                display: none;
+                position: relative;
+            }
+            .right img{
+                position: absolute;
+            }
+            .glass{
+                /* 如何计算放大镜宽高？？ */
+                /* 
+                 已知：小div宽高 = 小图宽高 = 250*250
+                      大div宽高 = 500*500
+                      大图宽高 = 800*800
+                 计算公式：
+                    放大镜宽 / 小div宽 = 大div宽 / 大图宽
+                    ==>放大镜宽 = 大div宽 / 大图宽 * 小div宽
+                                = 500/800*250
+                                =1250/8 = 156.125
+                 */
+                width:157px;
+                height:157px;
+                background-color: blue;
+                position: absolute;
+                left: 0;
+                top: 0;
+                opacity: 0.3;
+                display: none;
+            }
+        </style>
+	</head>
+	<body>
+        <div class="box">
+            <div class="left">
+                <img src="1.jpeg" >
+                <div class="glass"></div>
+            </div>
+            <div class="right">
+                <img src="2.jpeg" >
+            </div>
+        </div>
+	</body>
+    <script type="text/javascript">
+        var leftDiv = document.querySelector('.left');
+        var glass = document.querySelector('.glass');
+        var rightDiv = document.querySelector('.right');
+        var bigImg = document.querySelector('.right img');
+        
+        leftDiv.onmousemove = function(e){
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+            
+            x -= parseInt(getComputedStyle(glass).width)/2
+            y -= parseInt(getComputedStyle(glass).height)/2
+            //越界处理
+            //左越界处理
+            if (x < 0) {
+                x = 0;
+            }
+            //上越界处理
+            if (y < 0) {
+                y = 0;
+            }
+            //右越界处理
+            var maxLeft = parseInt(getComputedStyle(this).width) - parseInt(getComputedStyle(glass).width)
+            if (x > maxLeft ) {
+                x = maxLeft;
+            }
+            //下越界处理
+            var maxHeight = parseInt(getComputedStyle(this).height) - parseInt(getComputedStyle(glass).height)
+            if (y > maxHeight ) {
+                y = maxHeight;
+            }
+            console.log(x,y);
+            glass.style.left = x + "px";
+            glass.style.top = y + "px"; 
+            
+            //大图移动，需要计算移动的距离
+            /* 如何计算大图移动的距离？？ */
+            /* 
+             已知：小div宽高 = 小图宽高 = 250*250
+                  大div宽高 = 500*500
+                  大图宽高 = 800*800
+                  放大镜宽高= 157*157
+                  放大镜移动的x和y
+             计算大图移动的距离left和top????
+                计算公式：
+                放大镜移动x / 大图移动的x = 小图宽 / 大图宽
+                ===>大图移动的x = 大图宽 / 小图宽 * 放大镜移动x
+                
+              */
+            var left = -x * 800/250;
+            var top =  -y * 800/250; 
+            bigImg.style.left = left + "px";
+            bigImg.style.top = top + "px";
+            
+        }
+        leftDiv.onmouseover = function(){
+            glass.style.display = "block";
+            rightDiv.style.display = "block";
+        }
+        leftDiv.onmouseout = function(){
+            glass.style.display = "none";
+            rightDiv.style.display = "none";
+        }
+    </script>
+</html>

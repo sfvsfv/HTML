@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <style type="text/css">
+            .box{
+                width: 90%;
+            }
+            #list{
+                width: 100%;
+                list-style: none;
+            }
+            #list li{
+                border: 1px solid blue;
+                padding: 1%;
+                margin: 2%;
+                width: 26%;
+                float: left;
+            }
+            #list li img{
+                width: 100%;
+            }
+        </style>
+	</head>
+	<body>
+        <div class="box">
+            <ul id="list">
+
+            </ul>
+        </div>
+	</body>
+    <script type="text/javascript">
+        var ul = document.getElementById("list");
+        for (var i = 1; i <= 20; i++) {
+            var imgSrc = "img/" + (i<10?("0"+i):i) + ".jpg";
+            var li = "<li><img src=" + imgSrc + " /></li>";
+            ul.innerHTML += li;
+        }
+    </script>
+</html>

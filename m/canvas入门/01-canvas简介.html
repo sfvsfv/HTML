@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <style type="text/css">
+            canvas{
+                background-color: aquamarine;
+                margin: 0 auto;
+                display: block;
+                box-shadow: -5px -5px 15px black,5px 5px 15px black;
+            }
+        </style>
+	</head>
+	<body>
+        <pre>
+            canvas是一个HTML5的新标签，行内块标签
+            canvas是一个画布
+            可以使用canvas绘制各种图形、图片、文字及设置相关参数
+            使用canvas分两步：
+            第一步：在页面中添加canvas标签
+            第二步：在js中通过canvas的画笔对象进行绘制工作
+                1、在js在找到canvas标签
+                2、创建此标签上下文对象（画笔对象）
+            
+        </pre>
+        <canvas id="mycanvas" width="400" height="400"></canvas>
+	</body>
+    <script type="text/javascript">
+        var mycanvas = document.getElementById("mycanvas");
+        // 创建此标签上下文对象（画笔对象）
+        var ctx = mycanvas.getContext("2d");
+        
+        //绘制图形
+        //绘制矩形，填充矩形
+        ctx.fillRect(50,10,150,60);
+        //绘制矩形，描边矩形
+        ctx.strokeRect(50,80,150,60);
+        
+        //设置属性
+        ctx.fillStyle = "red";//设置新的填充颜色
+        ctx.fillRect(210,10,150,60);
+        
+        ctx.strokeStyle = "blue";//设置新的描边颜色
+        ctx.lineWidth = 10;
+        ctx.strokeRect(210,80,150,60);
+        
+        //改变透明度
+        ctx.fillStyle = "blue";
+        ctx.fillRect(50,150,150,60);
+        
+        ctx.globalAlpha = 0.3;
+        ctx.fillRect(50,220,150,60);
+        
+        //清除矩形区域
+        ctx.clearRect(125,0,160,400);
+        
+    </script>
+</html>

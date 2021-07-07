@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <style type="text/css">
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            #app{
+                width: 800px;
+                height: 600px;
+                border: 4px solid green;
+                margin: 0 auto;
+            }
+            #titleBox{
+                width: 100%;
+                height: 80px;
+                /* border: 4px solid green;
+                margin: -4px; */
+                border-bottom: 4px solid green;
+            }
+            #questionsBox{
+                width: 100%;
+                height: 440px;
+                border-bottom: 4px solid green;
+            }
+            #submitBox{
+                width: 100%;
+                height: 72px;
+                line-height: 72px;
+                text-align: center;
+            }
+            #titleBox div{
+                float: left;
+            }
+            #titleBox .div1,#titleBox .div3{
+                width: 150px;
+                height: 80px;
+                line-height: 80px;
+                /* background-color: aqua; */
+                text-align: center;
+                font-size: 30px;
+            }
+            #titleBox .div1{
+                color: green;
+                cursor: pointer;
+            }
+            #titleBox .div3{
+                color: red;
+                font-size:25px ;
+                display: none;
+            }
+            #titleBox .div2{
+                width: 500px;
+                height: 80px;
+                text-align: center;
+            }
+            #submitBox button{
+                width: 95%;
+                height: 40px;
+                background-color: #008000;
+                font-size: 28px;
+                border: none;
+                border-radius: 28px;
+            }
+            #questionsBox ul{
+                list-style: none;
+            }
+            #questionsBox ul li{
+                float: left;
+                width: 180px;
+                font-size: 25px;
+                text-align: right;
+                margin-top: 40px;
+            }
+            #questionsBox ul li input{
+                width: 60px;
+                font-size: 25px;
+            }
+        </style>
+	</head>
+	<body>
+        <div id="app">
+            <div id="titleBox">
+                <div class="div1">重新出题</div>
+                <div class="div2">
+                    <h1>自动出题和评分系统</h1>
+                    <h3>(小学生100以内加减法运算)</h3>
+                </div>
+                <div class="div3">得分：XXX分</div>
+            </div>
+            <div id="questionsBox">
+                <ul>
+                    <!-- <li>99-77=<input type="text"></li>
+                    <li>1-1=<input type="text"></li>
+                    <li>99-77=<input type="text"></li>
+                    <li>99-77=<input type="text"></li>
+                    <li>2-1=<input type="text"></li>
+                    <li>99-77=<input type="text"></li> -->
+                </ul>
+            </div>
+            <div id="submitBox">
+                <button>提交</button>
+            </div>
+        </div>
+	</body>
+    <script type="text/javascript">
+        getQuestions();
+        
+        function getQuestions(){
+            var ul = document.querySelector("#questionsBox ul");
+            for (var i = 1; i <=20; i++) {
+                var op = parseInt(Math.random()*2)?"+":"-";
+                
+                do{
+                    var a = parseInt(Math.random()*100);
+                    var b = parseInt(Math.random()*100);
+                    if(op == "-"){
+                        if (a >= b) {
+                            break;
+                        } 
+                    }
+                    if(op == "+"){
+                        if (a + b <= 100) {
+                            break;
+                        } 
+                    }
+                }while(1);
+                
+                var li = '<li>' + a + op + b + '=<input type="text"></li>';
+                ul.innerHTML += li;
+            }
+        }
+        
+        //重新出题
+        document.querySelector("#titleBox .div1").onclick = function(){
+            window.location.reload();//刷新
+        }
+        //提交，判断得分
+        document.querySelector("#submitBox button").onclick = function(){
+            document.querySelector("#titleBox .div3").style.display = "block"
+            var score = 0;
+            //获取所有li
+            var liArr = document.querySelectorAll("#questionsBox ul li");
+            console.log(liArr);
+            //遍历所有li
+            for (var i = 0; i < liArr.length; i++) {
+                var li = liArr[i];
+                //一、获取标准答案
+                //获取li的内容字符串
+                var str = li.innerText;
+                console.log(str);
+                //获取算术式，截取等号左边的式子
+                var mathStr = str.substring(0,str.length-1);
+                console.log(mathStr);
+                //计算标准答案
+                var answer = eval(mathStr);
+                console.log(answer);
+                
+                // 二、获取学生答案
+                //获取input框
+                var input = li.getElementsByTagName("input")[0];
+                console.log(input);
+                //获取input框中输入的内容，得到学生答案
+                var studentAnswer = input.value;//""
+                console.log(studentAnswer);
+                
+                //三、判断对错，计算得分
+                //先确定学生是否填了答案，如果填了答案
+                if (studentAnswer != "") {
+                    //再判断所填是否正确
+                    if (answer == studentAnswer) {
+                        score += 5;//答案正确，加分
+                    }
+                }
+               
+            }
+            document.querySelector("#titleBox .div3").innerText = "得分："+ score +"分"
+        }
+    </script>
+</html>
